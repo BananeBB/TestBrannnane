@@ -1,6 +1,9 @@
 .title {
   font-size: 80px;
 }
+body {
+  margin-bottom:50px;
+}
 
 h2 {
   background-color: #FFFF00;
@@ -30,6 +33,5 @@ footer {
   bottom: 0;
   width: 100%;
   text-align: center;
-  color: red;
-
+  
 }

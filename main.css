@@ -1,4 +1,4 @@
-title {
+.title {
   font-size: 80px;
 }
 
@@ -24,7 +24,7 @@ th {
   padding: 1em;             
 }
 
-footer {
+.footer {
   position: fixed;
   left: 0;
   bottom: 0;

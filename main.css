@@ -14,7 +14,9 @@ img {
 }
 
 table,
-td {padding: 1em;
+td {
+  padding: 1em;
+  border: 1px solid black;
 }
 
 th {

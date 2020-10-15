@@ -1,4 +1,4 @@
-.title {
+title {
   font-size: 80px;
 }
 
@@ -22,4 +22,13 @@ td {
 th {
   border: 1px solid black;
   padding: 1em;             
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+
 }

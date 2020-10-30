@@ -1,4 +1,6 @@
+permalink: TestBrannnane/public/index.html
+
+
 # TestBrannnane
 Brannnane
 
-permalink: TestBrannnane/public/index.html

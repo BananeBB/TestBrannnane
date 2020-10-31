@@ -1,5 +1,5 @@
 ---
-permalink: TestBrannnane/public/
+permalink: /TestBrannnane/public/
 ---
 
 

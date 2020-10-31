@@ -1,5 +1,5 @@
 ---
-permalink: TestBrannnane/public/
+permalink: https://bananebb.github.io/TestBrannnane/public
 ---
 
 # TestBrannnane

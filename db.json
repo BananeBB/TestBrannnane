@@ -1,0 +1,28 @@
+{
+    "reviews": [
+      {
+        "id": 1,
+        "username": "leo",
+        "date": "02.12.2020",
+        "location": "hello",
+        "text": "hello",
+        "rating": 5
+      },
+      {
+        "id": 2,
+        "username": "max",
+        "date": "",
+        "location": "hello",
+        "text": "hello",
+        "rating": 5
+      },
+      {
+        "id": 3,
+        "username": "hello",
+        "date": "",
+        "location": "hello",
+        "text": "hello",
+        "rating": 5
+      }
+    ]
+  }

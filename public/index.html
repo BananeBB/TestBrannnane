@@ -24,6 +24,14 @@
   gtag('config', 'UA-182186222-1');
 </script>
 
+<!-- Glide reviews -->
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+<!-- Required Core Stylesheet -->
+<link rel="stylesheet" href="glide.core.css">
+
+<!-- Optional Theme Stylesheet -->
+<link rel="stylesheet" href="glide.theme.css">
+
 <!-- Matomo -->
 <script type="text/javascript">
 	var _paq = window._paq = window._paq || [];
@@ -152,11 +160,75 @@
 		<div class="mt-10 p-6 text-justify">
 		</div>
 
-		
-		<div class="container rounded-md">
-
+		<!-- Reviwws-->
+		<div id="intro" class="slider glide glide--ltr glide--carousel glide--swipeable text-gray-600">
+			<div class="slider__track glide__track" data-glide-el="track">
+			  <ul class="slider__slides glide__slides" style="transition: transform 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; width: 3432.5px; transform: translate3d(-478.125px, 0px, 0px);">
+				
+				  <li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-right: 5px;">6</li><li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">7</li><li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">8</li><li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">9</li><li class="slider__frame glide__slide glide__slide--active" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">0</li>
+				
+				  <li class="slider__frame glide__slide" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">1 <br>test</br><br>test</br><br>test</br></li>
+				
+				  <li class="slider__frame glide__slide" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">2</li>
+				
+				  <li class="slider__frame glide__slide" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">3</li>
+				
+				  <li class="slider__frame glide__slide" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">4</li>
+				
+				  <li class="slider__frame glide__slide" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">5</li>
+				
+				  <li class="slider__frame glide__slide" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">6</li>
+				
+				  <li class="slider__frame glide__slide" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">7</li>
+				
+				  <li class="slider__frame glide__slide" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">8</li>
+				
+				  <li class="slider__frame glide__slide" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">9</li>
+				
+			  <li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">0</li><li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">1</li><li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">2</li><li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px;">3</li></ul>
+			</div>
+		  
+			<div data-glide-el="controls">
+			  <button class="slider__arrow slider__arrow--prev glide__arrow glide__arrow--left" data-glide-dir="<">
+				<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+				  <path d="M0 12l10.975 11 2.848-2.828-6.176-6.176H24v-3.992H7.646l6.176-6.176L10.975 1 0 12z"></path>
+				</svg>
+			  </button>
+		  
+			  <button class="slider__arrow slider__arrow--next glide__arrow glide__arrow--right" data-glide-dir=">">
+				<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+				  <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"></path>
+				</svg>
+			  </button>
+			</div>
+		  
+			<div class="slider__bullets glide__bullets" data-glide-el="controls[nav]">
+			  
+				<button class="slider__bullet glide__bullet glide__bullet--active" data-glide-dir="=0"></button>
+			  
+				<button class="slider__bullet glide__bullet" data-glide-dir="=1"></button>
+			  
+				<button class="slider__bullet glide__bullet" data-glide-dir="=2"></button>
+			  
+				<button class="slider__bullet glide__bullet" data-glide-dir="=3"></button>
+			  
+				<button class="slider__bullet glide__bullet" data-glide-dir="=4"></button>
+			  
+				<button class="slider__bullet glide__bullet" data-glide-dir="=5"></button>
+			  
+				<button class="slider__bullet glide__bullet" data-glide-dir="=6"></button>
+			  
+				<button class="slider__bullet glide__bullet" data-glide-dir="=7"></button>
+			  
+				<button class="slider__bullet glide__bullet" data-glide-dir="=8"></button>
+			  
+				<button class="slider__bullet glide__bullet" data-glide-dir="=9"></button>
+			  
+			</div>
 		</div>
 		
+
+
 		<div class="flex flex-wrap flex-col-reverse sm:flex-row">	
 			<div class="w-full sm:w-1/2 p-6 mt-6">
 		
@@ -322,7 +394,6 @@
 	  return false;
 	}
 </script>
-
 	<!--social media icons drop-->
 <script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
 <script src="https://unpkg.com/tippy.js@4"></script>
@@ -332,6 +403,28 @@
 	  placement: 'bottom'
 	})	
 </script>
+
+<!-- Glide -->
+<script>
+
+  var glide = new Glide('#intro', {
+	type: 'carousel',
+	perView: 4,
+	focusAt: 'center',
+	breakpoints: {
+	  800: {
+		perView: 2
+	  },
+	  480: {
+		perView: 1
+	  }
+	}
+  })
+  
+  glide.mount()
+</script>
+
+
 
 </body>
 

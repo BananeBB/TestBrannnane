@@ -1,5 +1,3 @@
 node_modules/
-package.json
-package-lock.json
 tailwind-default.config.js
 tailwind.config.js

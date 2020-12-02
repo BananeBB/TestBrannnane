@@ -48,18 +48,23 @@
   </script>
   <!-- End Matomo Code -->
 
-  <!-- Font Awesome if you need it
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-  -->
-  <link rel="stylesheet" href="style.css">
-  <!--Replace with your tailwind.css once created-->
-
+<!--tailwindcss integrieren-->  
+<link rel="stylesheet" href="style.css">
+<!--Replace with your tailwind.css once created-->
 <!-- Define your gradient here - use online tools to find a gradient matching your branding-->
 <style>
 	.gradient {
 		background: linear-gradient(90deg,#315923 0%, #ffe13a 100%);
 	}
 </style>
+<!-- Font Awesome Icon Library für Sterne in Bewertung-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.checked {
+  color: orange;
+}
+</style>
+
 </head>
 
 <body class="leading-normal tracking-normal text-white gradient font-sans">
@@ -160,38 +165,156 @@
 		<div class="mt-10 p-6 text-justify">
 		</div>
 
-		<!-- Reviwws-->
-		<div id="intro" class="slider glide glide--ltr glide--carousel glide--swipeable text-gray-600">
+		<!-- Reviews-->
+		<div id="intro" class="slider glide glide--ltr glide--carousel glide--swipeable border-t-2 border-b-2 border-black text-gray-600 p-6">
 			<div class="slider__track glide__track" data-glide-el="track">
 				<ul class="slider__slides glide__slides" style="transition: transform 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; width: 3432.5px; transform: translate3d(-478.125px, 0px, 0px);">
 				
 					<li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-right: 5px;">6</li><li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">7</li><li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">8</li><li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">9</li><li class="slider__frame glide__slide glide__slide--active" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">0</li>
 				
-					<li class="slider__frame glide__slide" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">1
-						<div class="rounded shadow-md border-2 border-gray-800">
-							<br>test</br><br>test</br><br>test</br>
+					<li class="slider__frame glide__slide rounded-3xl border-2 border-gray-300 shadow-lg bg-white mx-20 p-5" style="width: 181.25px">1
+						<div class="text-gray-600">
+							<p id="username" class="text-lg font-bold">Username</p>
+							<p id="date" class="">02.12.2020</p>
+							<p class="">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</p>
+							<p id="description" class="mt-3">Der Geschmack ist bombastisch.</p>
+							
 						</div>
 					</li>
 				
-					<li class="slider__frame glide__slide" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">2
-						<div class="rounded shadow-md border-2 border-gray-800">
-							<br>test</br><br>test</br><br>test</br>
+					<li class="slider__frame glide__slide rounded-3xl border-2 border-gray-300 shadow-lg bg-white mx-20 p-5" style="width: 181.25px">2
+						<div class="text-gray-600">
+							<p id="username" class="text-lg font-bold">Username</p>
+							<p id="date" class="">02.12.2020</p>
+							<p class="">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</p>
+							<p id="description" class="mt-3">Der Geschmack ist bombastisch.</p>
+							
 						</div>
 					</li>
 				
-					<li class="slider__frame glide__slide" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">3</li>
+					<li class="slider__frame glide__slide rounded-3xl border-2 border-gray-300 shadow-lg bg-white mx-20 p-5" style="width: 181.25px">3
+						<div class="text-gray-600">
+							<p id="username" class="text-lg font-bold">Username</p>
+							<p id="date" class="">02.12.2020</p>
+							<p class="">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</p>
+							<p id="description" class="mt-3">Der Geschmack ist bombastisch.</p>
+							
+						</div>
+					</li>
 				
-					<li class="slider__frame glide__slide" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">4</li>
+					<li class="slider__frame glide__slide rounded-3xl border-2 border-gray-300 shadow-lg bg-white mx-20 p-5" style="width: 181.25px">4
+						<div class="text-gray-600">
+							<p id="username" class="text-lg font-bold">Username</p>
+							<p id="date" class="">02.12.2020</p>
+							<p class="">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</p>
+							<p id="description" class="mt-3">Der Geschmack ist bombastisch.</p>
+							
+						</div>
+					</li>
 				
-					<li class="slider__frame glide__slide" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">5</li>
+					<li class="slider__frame glide__slide rounded-3xl border-2 border-gray-300 shadow-lg bg-white mx-20 p-5" style="width: 181.25px">5
+						<div class="text-gray-600">
+							<p id="username" class="text-lg font-bold">Username</p>
+							<p id="date" class="">02.12.2020</p>
+							<p class="">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</p>
+							<p id="description" class="mt-3">Der Geschmack ist bombastisch.</p>
+							
+						</div>
+					</li>
 				
-					<li class="slider__frame glide__slide" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">6</li>
+					<li class="slider__frame glide__slide rounded-3xl border-2 border-gray-300 shadow-lg bg-white mx-20 p-5" style="width: 181.25px">6
+						<div class="text-gray-600">
+							<p id="username" class="text-lg font-bold">Username</p>
+							<p id="date" class="">02.12.2020</p>
+							<p class="">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</p>
+							<p id="description" class="mt-3">Der Geschmack ist bombastisch.</p>
+							
+						</div>
+					</li>
 				
-					<li class="slider__frame glide__slide" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">7</li>
+					<li class="slider__frame glide__slide rounded-3xl border-2 border-gray-300 shadow-lg bg-white mx-20 p-5" style="width: 181.25px">7
+						<div class="text-gray-600">
+							<p id="username" class="text-lg font-bold">Username</p>
+							<p id="date" class="">02.12.2020</p>
+							<p class="">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</p>
+							<p id="description" class="mt-3">Der Geschmack ist bombastisch.</p>
+							
+						</div>
+					</li>
 				
-					<li class="slider__frame glide__slide" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">8</li>
+					<li class="slider__frame glide__slide rounded-3xl border-2 border-gray-300 shadow-lg bg-white mx-20 p-5" style="width: 181.25px">8
+						<div class="text-gray-600">
+							<p id="username" class="text-lg font-bold">Username</p>
+							<p id="date" class="">02.12.2020</p>
+							<p class="">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</p>
+							<p id="description" class="mt-3">Der Geschmack ist bombastisch.</p>
+							
+						</div>
+					</li>
 				
-					<li class="slider__frame glide__slide" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">9</li>
+					<li class="slider__frame glide__slide rounded-3xl border-2 border-gray-300 shadow-lg bg-white mx-20 p-5" style="width: 181.25px">9
+						<div class="text-gray-600">
+							<p id="username" class="text-lg font-bold">Username</p>
+							<p id="date" class="">02.12.2020</p>
+							<p class="">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</p>
+							<p id="description" class="mt-3">Der Geschmack ist bombastisch.</p>
+							
+						</div>
+					</li>
 				
 					<li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">0</li><li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">1</li><li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">2</li><li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px;">3</li>
 				</ul>
@@ -418,7 +541,7 @@
 
   var glide = new Glide('#intro', {
 	type: 'carousel',
-	perView: 4,
+	perView: 3,
 	focusAt: 'center',
 	breakpoints: {
 	  800: {

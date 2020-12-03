@@ -4,25 +4,22 @@
         "id": 1,
         "username": "leo",
         "date": "02.12.2020",
-        "location": "hello",
-        "text": "hello",
-        "rating": 5
+        "rating": 5,
+        "text": "hello"
       },
       {
-        "id": 2,
-        "username": "max",
-        "date": "",
-        "location": "hello",
-        "text": "hello",
-        "rating": 5
+        "id": 1,
+        "username": "leo",
+        "date": "02.12.2020",
+        "rating": 5,
+        "text": "hello"
       },
       {
-        "id": 3,
-        "username": "hello",
-        "date": "",
-        "location": "hello",
-        "text": "hello",
-        "rating": 5
+        "id": 1,
+        "username": "leo",
+        "date": "02.12.2020",
+        "rating": 5,
+        "text": "hello"
       }
     ]
   }

@@ -178,7 +178,8 @@
                 <!-- Reviews-->
                 <div id="intro" class="slider glide glide--ltr glide--carousel glide--swipeable border-t-2 border-b-2 border-black text-gray-600 p-6">
                     <div class="slider__track glide__track" data-glide-el="track">
-                        <ul id="reviews" class="slider__slides glide__slides" style="transition: transform 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; width: 3432.5px; transform: translate3d(-478.125px, 0px, 0px);">
+						<ul id="reviews" class="slider__slides glide__slides" style="transition: transform 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; width: 3432.5px; transform: translate3d(-478.125px, 0px, 0px);">
+							<!--
                             <li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">0</li>
                             <li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">1</li>
                             <li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">2</li>
@@ -186,7 +187,8 @@
                             <li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">4</li>
                             <li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">5</li>
                             <li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">6</li>
-                            <li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">7</li>
+							<li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">7</li>
+							-->
                         </ul>
                     </div>
 
@@ -205,6 +207,8 @@
                     </div>
 
                     <div id="bullets" class="slider__bullets glide__bullets" data-glide-el="controls[nav]">
+
+                        <!--
                         <button class="slider__bullet glide__bullet glide__bullet--active" data-glide-dir="=0"></button>
 
                         <button class="slider__bullet glide__bullet" data-glide-dir="=1"></button>
@@ -224,6 +228,8 @@
                         <button class="slider__bullet glide__bullet" data-glide-dir="=8"></button>
 
                         <button class="slider__bullet glide__bullet" data-glide-dir="=9"></button>
+                        -->
+                        
                     </div>
                 </div>
 
@@ -438,13 +444,15 @@
             fetch("http://my-json-server.typicode.com/BananeBB/TestBrannnane/reviews/")
                 .then((response) => response.json())
                 .then((json) => generateReviews(json));
+			
+				
 
             function generateReviews(reviews) {
                 var i = 0;
                 let reviewUl = document.getElementById("reviews");
 
                 for (let review of reviews) {
-                    console.log(i);
+                    
 					console.log(JSON.stringify(reviews));
 
 
@@ -484,9 +492,34 @@
                     reviewUl.insertBefore(reviewLi, reviewUl.children[i]);
                     i++;
                 }
+                console.log(reviews.length)
+                generateBullets(reviews)
 
 				mountGlide();
+				
+			}
+			
+            
+			function generateBullets(reviews) {
+                var countBullet = 0
+                let reviewBullets = document.getElementById("bullets")
+                for (let review of reviews) {
+                    bulletNumber = "=" + countBullet
+                    let bullet = document.createElement("button")
+                    if (countBullet == 0) {
+                        bullet.setAttribute("class", "slider__bullet glide__bullet glide__bullet--active")
+                        bullet.setAttribute("data-glide-dir", bulletNumber)
+                    }
+                    else {
+                        bullet.setAttribute("class", "slider__bullet glide__bullet glide__bullet--active")
+                        bullet.setAttribute("data-glide-dir", bulletNumber)
+                    }
+                    reviewBullets.insertBefore(bullet, reviewBullets.children[countBullet])
+                    countBullet++;
+			    }
             }
+			
+				
 
 			function mountGlide() {
 				var glide = new Glide("#intro", {
@@ -507,20 +540,13 @@
 			}
         </script>
 
-        <!-- Test bullets
-function generateBullets(json) {
-	for (let i=0 of json.) {
-		let bullets = document.getElementById('bullets')
-		
-		let reviewButton = document.createElement('button')
-		reviewButton.className = 'slider__bullet glide__bullet'
+      
 
-		reviewButton.setAttribute('data-glide-dir', )
-}
+
+
+<button class="slider__bullet glide__bullet glide__bullet--active" data-glide-dir="=0"></button>
 
 <button class="slider__bullet glide__bullet" data-glide-dir="=1"></button>
-	
 
--->
     </body>
 </html>

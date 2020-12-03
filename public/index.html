@@ -175,7 +175,7 @@
                 <div class="mt-10 p-6 text-justify"></div>
 
                 <!-- Reviews-->
-                <div id="intro" class="slider glide glide--ltr glide--carousel glide--swipeable border-t-2 border-b-2 border-gray-700 text-gray-600 my-5 p-3">
+                <div id="intro" class="slider glide glide--ltr glide--carousel glide--swipeable border-t-2 border-b-2 border-gray-400 text-gray-600 my-5 p-3">
                     <div class="slider__track glide__track" data-glide-el="track">
 						<ul id="reviews" class="slider__slides glide__slides" style="transition: transform 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; width: 3432.5px; transform: translate3d(-478.125px, 0px, 0px);">
 							<!--
@@ -234,13 +234,13 @@
 
 
                 <!--Input review-->
-                <div class="rounded-xl border-2 border-gray-400 bg-gray-200 text-gray-600 mx-64 p-8">
+                <div class="rounded-xl border-2 border-gray-400 bg-gray-100 text-gray-600 mx-64 p-8">
                     <form>
                         <label for="username">Username:</label><br>
                         <input class="border-2 border-transparent border-blue-300 rounded-md shadow-lg" type="text" id="username" name="username"><br>
 
-                        <label for="rating">Bewertung in Sterne: </label>
-                        <select class="border-2 border-transparent border-blue-300 rounded-md shadow-lg" id="rating" name="rating" value="1">
+                        <label class="mt-2" for="rating">Bewertung in Sterne: </label>
+                        <select class="border-2 border-transparent border-blue-300 rounded-md shadow-lg mt-2" id="rating" name="rating" value="1">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -248,10 +248,10 @@
                             <option value="5">5</option>
                         </select><br>
 
-                        <label for="description">Beschreibung:</label><br>
-                        <input class="w-full h-24 border-2 border-transparent border-blue-300 rounded-md shadow-lg" type="textarea" id="description" name="description"><br>
-
-                        <button class="rounded-3xl shadow-xl bg-orange-700 hover:bg-orange-600 text-white text-center mt-4 py-1 px-2" id="submit">Daten senden
+                        <label class="mt-2" for="description">Beschreibung:</label><br>
+                        <input class="w-full h-24 border-2 border-transparent border-blue-300 rounded-md shadow-lg mt-2" type="textarea" id="description" name="description"><br>
+                        
+                        <button class="rounded-3xl shadow-2xl bg-orange-700 hover:bg-orange-600 text-white text-center mt-4 py-1 px-2" id="submit">Daten senden
 
                     </form> 
                 </div>
@@ -467,7 +467,7 @@
 
 
                     let reviewLi = document.createElement("li");
-                    reviewLi.setAttribute("class", "slider__frame glide__slide rounded-3xl border-2 border-gray-300 shadow-lg bg-white mx-20 p-5");
+                    reviewLi.setAttribute("class", "slider__frame glide__slide rounded-3xl border-2 border-gray-300 bg-gray-100 mx-20 p-5");
                     reviewLi.setAttribute("style", "width: 181.25px");
 
                     let reviewID = document.createElement("p");

@@ -229,7 +229,7 @@
 
                         <button class="slider__bullet glide__bullet" data-glide-dir="=9"></button>
                         -->
-                        
+
                     </div>
                 </div>
 
@@ -480,7 +480,18 @@
 
                     let reviewRating = document.createElement("p");
                     reviewRating.id = "rating";
-                    reviewRating.innerHTML = review.rating;
+                    for (var x = 0; x <= 4; x++) {
+                        if (x <= review.rating) {
+                            let starChecked = document.createElement("span");
+                            starChecked.className = "fa fa-star checked";
+                            reviewRating.insertBefore(starChecked, reviewRating.children[x]);
+                        }
+                        else {
+                            let star = document.createElement("span");
+                            star.className = "fa fa-star";
+                            reviewRating.insertBefore(star, reviewRating.children[x]);
+                        }
+                    }
                     reviewLi.appendChild(reviewRating);
 
                     let reviewDescr = document.createElement("p");
@@ -511,7 +522,7 @@
                         bullet.setAttribute("data-glide-dir", bulletNumber)
                     }
                     else {
-                        bullet.setAttribute("class", "slider__bullet glide__bullet glide__bullet--active")
+                        bullet.setAttribute("class", "slider__bullet glide__bullet")
                         bullet.setAttribute("data-glide-dir", bulletNumber)
                     }
                     reviewBullets.insertBefore(bullet, reviewBullets.children[countBullet])
@@ -539,14 +550,13 @@
            		glide.mount();
 			}
         </script>
-
-      
-
-
-
-<button class="slider__bullet glide__bullet glide__bullet--active" data-glide-dir="=0"></button>
-
-<button class="slider__bullet glide__bullet" data-glide-dir="=1"></button>
+    <p class="">
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+    </p>
 
     </body>
 </html>

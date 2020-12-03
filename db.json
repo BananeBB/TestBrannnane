@@ -4,29 +4,43 @@
         "id": 1,
         "username": "leo",
         "date": "02.12.2020",
-        "rating": 5,
+        "rating": 1,
         "text": "hello"
       },
       {
-        "id": 1,
+        "id": 2,
         "username": "max",
         "date": "02.12.2020",
-        "rating": 5,
+        "rating": 2,
         "text": "hello"
       },
       {
-        "id": 1,
+        "id": 3,
         "username": "tim",
         "date": "02.12.2020",
-        "rating": 5,
+        "rating": 3,
         "text": "hello"
       },
       {
-        "id": 1,
+        "id": 4,
         "username": "alex",
         "date": "02.12.2020",
-        "rating": 5,
+        "rating": 4,
         "text": "test"
+      },
+      {
+        "id": 5,
+        "username": "pascal",
+        "date": "02.12.2020",
+        "rating": 5,
+        "text": "einfach nur geil"
+      },
+      {
+        "id": 6,
+        "username": "marcel",
+        "date": "02.12.2020",
+        "rating": 0,
+        "text": "nicht so lecker"
       }
     ]
   }

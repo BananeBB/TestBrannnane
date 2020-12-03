@@ -28,7 +28,6 @@
         <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
         <!-- Required Core Stylesheet -->
         <link rel="stylesheet" href="glide.core.css" />
-
         <!-- Optional Theme Stylesheet -->
         <link rel="stylesheet" href="glide.theme.css" />
 
@@ -176,7 +175,7 @@
                 <div class="mt-10 p-6 text-justify"></div>
 
                 <!-- Reviews-->
-                <div id="intro" class="slider glide glide--ltr glide--carousel glide--swipeable border-t-2 border-b-2 border-black text-gray-600 p-6">
+                <div id="intro" class="slider glide glide--ltr glide--carousel glide--swipeable border-t-2 border-b-2 border-black text-gray-600 p-3">
                     <div class="slider__track glide__track" data-glide-el="track">
 						<ul id="reviews" class="slider__slides glide__slides" style="transition: transform 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; width: 3432.5px; transform: translate3d(-478.125px, 0px, 0px);">
 							<!--
@@ -480,7 +479,7 @@
 
                     let reviewRating = document.createElement("p");
                     reviewRating.id = "rating";
-                    for (var x = 0; x <= 4; x++) {
+                    for (var x = 1; x <= 5; x++) {
                         if (x <= review.rating) {
                             let starChecked = document.createElement("span");
                             starChecked.className = "fa fa-star checked";
@@ -530,13 +529,17 @@
 			    }
             }
 			
-				
+
 
 			function mountGlide() {
+
 				var glide = new Glide("#intro", {
-					type: "carousel",
+                    type: "carousel",
+                    autoplay: 2000,
+                    hoverpause: true,
 					perView: 3,
-					focusAt: "center",
+                    focusAt: "center",
+                    gap: 30,
 					breakpoints: {
 						800: {
 							perView: 2,
@@ -550,13 +553,6 @@
            		glide.mount();
 			}
         </script>
-    <p class="">
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span>
-    </p>
 
     </body>
 </html>

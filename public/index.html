@@ -475,9 +475,8 @@
                     
 					console.log(JSON.stringify(reviews));
 
-
                     let reviewLi = document.createElement("li");
-                    reviewLi.setAttribute("class", "slider__frame glide__slide rounded-3xl border-2 border-gray-300 bg-gray-100 mx-20 p-5");
+                    reviewLi.setAttribute("class", "slider__frame glide__slide rounded-3xl border-2 border-gray-300 bg-gray-100 p-5");
                     reviewLi.setAttribute("style", "width: 181.25px");
 
                     let reviewID = document.createElement("p");
@@ -518,13 +517,64 @@
                     reviewUl.insertBefore(reviewLi, reviewUl.children[i]);
                     i++;
                 }
+                //generateReviewsClones(reviews)
                 generateBullets(reviews)
 
 				mountGlide();
 				
 			}
 			
-            
+            /*
+            function generateReviewsClones(reviews) {
+                var i = 0;
+                let reviewUl = document.getElementById("reviews");
+
+                for (let review of reviews) {
+
+                    let reviewLi = document.createElement("li");
+                    reviewLi.setAttribute("class", "slider__frame glide__slide glide__slide--clone rounded-3xl border-2 border-gray-300 bg-gray-100 p-5");
+                    reviewLi.setAttribute("style", "width: 181.25px");
+
+                    let reviewID = document.createElement("p");
+                    reviewID.className = "";
+                    reviewID.innerHTML = review.id;
+                    reviewLi.appendChild(reviewID);
+
+                    let reviewUsername = document.createElement("p");
+                    reviewUsername.className = "text-lg font-bold";
+                    reviewUsername.innerHTML = review.username;
+                    reviewLi.appendChild(reviewUsername);
+
+                    let reviewDate = document.createElement("p");
+                    reviewDate.className = "";
+                    reviewDate.innerHTML = review.date;
+                    reviewLi.appendChild(reviewDate);
+
+                    let reviewRating = document.createElement("p");
+                    for (var x = 1; x <= 5; x++) {
+                        if (x <= review.rating) {
+                            let starChecked = document.createElement("span");
+                            starChecked.className = "fa fa-star checked";
+                            reviewRating.insertBefore(starChecked, reviewRating.children[x]);
+                        }
+                        else {
+                            let star = document.createElement("span");
+                            star.className = "fa fa-star";
+                            reviewRating.insertBefore(star, reviewRating.children[x]);
+                        }
+                    }
+                    reviewLi.appendChild(reviewRating);
+
+                    let reviewDescr = document.createElement("p");
+                    reviewDescr.className = "mt-3";
+                    reviewDescr.innerHTML = review.text;
+                    reviewLi.appendChild(reviewDescr);
+
+                    reviewUl.insertBefore(reviewLi, reviewUl.children[i]);
+                    i++;
+                }
+            }*/
+
 			function generateBullets(reviews) {
                 var countBullet = 0
                 let reviewBullets = document.getElementById("bullets")
@@ -550,7 +600,7 @@
 
 				var glide = new Glide("#intro", {
                     type: "carousel",
-                    autoplay: 2000,
+                    //autoplay: 2000,
                     hoverpause: true,
 					perView: 3,
                     focusAt: "center",

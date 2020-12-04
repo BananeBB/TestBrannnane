@@ -6,8 +6,8 @@ window.onscroll = function() {
     if (window.scrollY > 5) {
         header.classList.remove("gradient");
         header.classList.add("bg-white");
-        navAction1.classList.remove("hover:border-white");
-        navAction1.classList.add("hover:border-black");
+        navAction1.classList.remove("");
+        navAction1.classList.add("");
     } else {
         header.classList.remove("bg-white");
         header.classList.add("gradient");

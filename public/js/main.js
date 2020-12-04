@@ -1,16 +1,38 @@
 //Scrollen ändert den Header        
 window.onscroll = function() {
     var header = document.getElementById('header');
-    var navAction1 = document.getElementById('navAction1');
-    var navAction2 = document.getElementById('navAction2');
+    var navTextDiv1 = document.getElementById('navTextDiv1');
+    var navTextDiv2 = document.getElementById('navTextDiv2');
+    var navTextDiv3 = document.getElementById('navTextDiv3');
+    var navHoverDiv1 = document.getElementById('navHoverDiv1');
+    var navHoverDiv2 = document.getElementById('navHoverDiv2');
+    var navHoverDiv3 = document.getElementById('navHoverDiv2');
     if (window.scrollY > 5) {
         header.classList.remove("gradient");
-        header.classList.add("bg-white");
-        navAction1.classList.remove("");
-        navAction1.classList.add("");
+        header.classList.add("bg-blue-100");
+
+        navTextDiv1.classList.remove("text-white");
+        navTextDiv1.classList.add("text-gray-800");
+        navTextDiv2.classList.remove("text-white");
+        navTextDiv2.classList.add("text-gray-800");
+        navTextDiv3.classList.remove("text-white");
+        navTextDiv3.classList.add("text-gray-800");
+
+        navHoverDiv1.classList.remove("border-white")
+        navHoverDiv1.classList.add("border-gray-800")
     } else {
-        header.classList.remove("bg-white");
+        header.classList.remove("bg-blue-100");
         header.classList.add("gradient");
+
+        navTextDiv1.classList.remove("text-gray-800");
+        navTextDiv1.classList.add("text-white");
+        navTextDiv2.classList.remove("text-gray-800");
+        navTextDiv2.classList.add("text-white");
+        navTextDiv3.classList.remove("text-gray-800");
+        navTextDiv3.classList.add("text-white");
+
+        navHoverDiv1.classList.remove("border-gray-800")
+        navHoverDiv1.classList.add("border-white")
     }
 }
 

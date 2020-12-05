@@ -66,7 +66,7 @@
         <!--Nav-->
         <header>
             <nav id="header" class="fixed top-0 w-full z-30 shadow-2xl gradient">
-                <div class="container items-center flex justify-between mx-auto py-3">
+                <div id="navDivFlex" class="w-full container items-center flex flex-wrap justify-between mx-auto py-3">
                     <!---Logo einfügen-> Es müsste noch angepasst werden, dass das Logo bleibt, wenn man im Handy Format ist.
                     <div class="">
                         
@@ -76,8 +76,8 @@
                     -->
 
                     <!--Für kleiner Geräte Burger-Menü togglen bzw für größere verbergen-->
-                    <div class="lg:hidden block pl-6">
-                        <button id="burgerButton" class="block text-white hover:text-orange-900">
+                    <div class="lg:hidden block pl-6 md:pl-0">
+                        <button id="burgerButton" class="flex items-center text-white hover:text-orange-900">
                             <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <title>Menu</title>
                                 <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
@@ -86,16 +86,16 @@
                     </div>
 
                     <!--HTML Code für größere Bildschirme-->
-                    <div class="hidden lg:flex flex-grow z-20 pl-32" id="nav-content">
-                        <ul class="lg:flex">
+                    <div class="hidden lg:flex flex-grow z-20 lg:pl-32" id="nav-content">
+                        <ul class="list-reset lg:flex justify-start">
                             <li id="navHoverDiv1" class="mr-3 border-b-2 border-white hover:border-orange-900">
-                                <a id="navTextDiv1" class="inline-block text-xl text-white font-bold lg:m-auto py-2 px-4" href="index.html">Home</a>
+                                <a id="navTextDiv1" class="inline-block text-xl text-white font-bold lg:m-auto py-2 px-6" href="index.html">Home</a>
                             </li>
                             <li id="navHoverDiv2" class="mr-3 border-b-2 border-transparent hover:border-orange-900">
-                                <a id="navTextDiv2" class="inline-block text-xl text-white lg:m-auto py-2 px-4" href="blog.html">Blog</a>
+                                <a id="navTextDiv2" class="inline-block text-xl text-white lg:m-auto py-2 px-6" href="blog.html">Blog</a>
                             </li>
                             <li id="navHoverDiv3" class="mr-3 border-b-2 border-transparent hover:border-orange-900">
-                                <a id="navTextDiv3" class="inline-block text-xl text-white lg:m-auto py-2 px-4" href="about.html">About</a>
+                                <a id="navTextDiv3" class="inline-block text-xl text-white lg:m-auto py-2 px-6" href="about.html">About</a>
                             </li>
                         </ul>
                     </div>
@@ -103,7 +103,7 @@
                     
 
                     <!--dropdown menü für Sprache-->
-                    <div id="navMenuDiv2" class="flex pt-2 pr-6 lg:pr-0">
+                    <div id="navMenuDiv2" class="flex pt-2 pr-6 md:pr-0 lg:pr-0">
                         <div>
                             <button id="languageBtn" class="block h-10 w-10" data-tippy-content="Language">
                                 <svg class="fill-current  text-xl text-gray-800 hover:text-orange-900" role="img" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
@@ -417,12 +417,17 @@
 
         <script>
             //Burger-Menü tooglen
+            var navDivFlex = document.getElementById("navDivFlex");
             var navMenuDiv = document.getElementById("nav-content");
             var navMenuDiv2 = document.getElementById("navMenuDiv2");
             var burgerBtn = document.getElementById("burgerButton");
             var navTextDiv1 = document.getElementById('navTextDiv1');
             var navTextDiv2 = document.getElementById('navTextDiv2');
             var navTextDiv3 = document.getElementById('navTextDiv3');
+            var navHoverDiv1 = document.getElementById('navHoverDiv1');
+            var navHoverDiv2 = document.getElementById('navHoverDiv2');
+            var navHoverDiv3 = document.getElementById('navHoverDiv3');
+            
 
             document.onclick = check;
             function check(e) {
@@ -432,29 +437,56 @@
                 if (!checkParent(target, navMenuDiv)) {
                     // click NOT on the menu
                     if (checkParent(target, burgerBtn)) {
-                        header.classList.remove("gradient");
-                        header.classList.add("bg-blue-100");
+                        if (navMenuDiv.classList.contains("hidden")) {
+                            header.classList.remove("gradient");
+                            header.classList.add("bg-blue-100");
 
-                        navMenuDiv.classList.remove("hidden", "pl-32");
-                        navMenuDiv.classList.add("pl-5")
-                        navMenuDiv2.classList.add("hidden");
+                            navDivFlex.classList.remove("flex");
+                            navMenuDiv.classList.remove("hidden");
+                            navMenuDiv2.classList.add("hidden");
 
-                        burgerBtn.classList.remove("text-white")
-                        burgerBtn.classList.add("text-gray-800")
+                            burgerBtn.classList.remove("text-white");
+                            burgerBtn.classList.add("text-gray-800", "mt-3");
 
-                        navTextDiv1.classList.remove("text-white");
-                        navTextDiv1.classList.add("text-gray-800");
-                        navTextDiv2.classList.remove("text-white");
-                        navTextDiv2.classList.add("text-gray-800");
-                        navTextDiv3.classList.remove("text-white");
-                        navTextDiv3.classList.add("text-gray-800");
-                        
-                                                
+                            navTextDiv1.classList.remove("text-white");
+                            navTextDiv1.classList.add("text-gray-800", "hover:text-orange-900");
+                            navTextDiv2.classList.remove("text-white");
+                            navTextDiv2.classList.add("text-gray-800", "hover:text-orange-900");
+                            navTextDiv3.classList.remove("text-white");
+                            navTextDiv3.classList.add("text-gray-800", "hover:text-orange-900");
+
+                            navHoverDiv1.classList.remove("border-b-2");
+                            navHoverDiv2.classList.remove("border-b-2");
+                            navHoverDiv3.classList.remove("border-b-2");
+                        } else {
+                            navDivFlex.classList.add("flex")
+                            navMenuDiv.classList.add("hidden");
+                            navMenuDiv2.classList.remove("hidden");
+                            burgerBtn.classList.remove("mt-3")
+
+                            navTextDiv1.classList.remove("hover:text-orange-900");
+                            navTextDiv2.classList.remove("hover:text-orange-900");
+                            navTextDiv3.classList.remove("hover:text-orange-900");
+
+                            navHoverDiv1.classList.add("border-b-2");
+                            navHoverDiv2.classList.add("border-b-2");
+                            navHoverDiv3.classList.add("border-b-2");
+                        }
+                         
                     } else {
                         // click both outside link and outside menu, hide menu
-                        navMenuDiv.classList.remove("pl-5");
-                        navMenuDiv.classList.add("hidden", "pl-32");
+                        navDivFlex.classList.add("flex")
+                        navMenuDiv.classList.add("hidden");
                         navMenuDiv2.classList.remove("hidden");
+                        burgerBtn.classList.remove("mt-3")
+
+                        navTextDiv1.classList.remove("hover:text-orange-900");
+                        navTextDiv2.classList.remove("hover:text-orange-900");
+                        navTextDiv3.classList.remove("hover:text-orange-900");
+
+                        navHoverDiv1.classList.add("border-b-2");
+                        navHoverDiv2.classList.add("border-b-2");
+                        navHoverDiv3.classList.add("border-b-2");
                     }
                 }
             }

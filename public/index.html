@@ -510,37 +510,6 @@
                 }
                 return false;
             }
-
-            /*dropdownmenü für Sprachauswahl aufrufen
-
-            var navMenuDiv = document.getElementById("nav-content");
-            var languageBtn = document.getElementById("languageBtn");
-            var dropdownDiv = document.getElementById("languageDropdown");
-
-            document.onclick = check;
-            function check(e) {
-                var target = (e && e.target) || (event && event.srcElement);
-
-                if (!checkParent(target, navMenuDiv)) {
-                    // click NOT on the menu
-                    if (checkParent(target, languageBtn)) {
-                        dropdownDiv.classList.remove("hidden");                      
-                        
-                    } else {
-                        // click both outside link and outside menu, hide menu
-                        dropdownDiv.classList.add("hidden");
-                    }
-                }
-            }
-            function checkParent(t, elm) {
-                while (t.parentNode) {
-                    if (t == elm) {
-                        return true;
-                    }
-                    t = t.parentNode;
-                }
-                return false;
-            }*/     
         </script>
     </body>
 </html>

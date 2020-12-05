@@ -479,37 +479,85 @@
 
 <!--Scripts-->
 <script>
-	/*Toggle dropdown list navigation*/
-	/*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
-	
+	//Burger-Menü tooglen
+	var navDivFlex = document.getElementById("navDivFlex");
 	var navMenuDiv = document.getElementById("nav-content");
-	var navMenu = document.getElementById("nav-toggle");
+	var navMenuDiv2 = document.getElementById("navMenuDiv2");
+	var burgerBtn = document.getElementById("burgerButton");
+	var navTextDiv1 = document.getElementById('navTextDiv1');
+	var navTextDiv2 = document.getElementById('navTextDiv2');
+	var navTextDiv3 = document.getElementById('navTextDiv3');
+	var navHoverDiv1 = document.getElementById('navHoverDiv1');
+	var navHoverDiv2 = document.getElementById('navHoverDiv2');
+	var navHoverDiv3 = document.getElementById('navHoverDiv3');
 	
+
 	document.onclick = check;
-	function check(e){
-	  var target = (e && e.target) || (event && event.srcElement);
-	  
-	  //Nav Menu
-	  if (!checkParent(target, navMenuDiv)) {
-		// click NOT on the menu
-		if (checkParent(target, navMenu)) {
-		  // click on the link
-		  if (navMenuDiv.classList.contains("hidden")) {
-			navMenuDiv.classList.remove("hidden");
-		  } else {navMenuDiv.classList.add("hidden");}
-		} else {
-		  // click both outside link and outside menu, hide menu
-		  navMenuDiv.classList.add("hidden");
+	function check(e) {
+		var target = (e && e.target) || (event && event.srcElement);
+
+		//Nav Menu
+		if (!checkParent(target, navMenuDiv)) {
+			// click NOT on the menu
+			if (checkParent(target, burgerBtn)) {
+				if (navMenuDiv.classList.contains("hidden")) {
+					header.classList.remove("gradient");
+					header.classList.add("bg-blue-100");
+
+					navDivFlex.classList.remove("flex");
+					navMenuDiv.classList.remove("hidden");
+
+					burgerBtn.classList.remove("text-white");
+					burgerBtn.classList.add("text-gray-800", "mt-3");
+
+					navTextDiv1.classList.remove("text-white");
+					navTextDiv1.classList.add("text-gray-800", "hover:text-orange-900");
+					navTextDiv2.classList.remove("text-white");
+					navTextDiv2.classList.add("text-gray-800", "hover:text-orange-900");
+					navTextDiv3.classList.remove("text-white");
+					navTextDiv3.classList.add("text-gray-800", "hover:text-orange-900");
+
+					navHoverDiv1.classList.remove("border-b-2");
+					navHoverDiv2.classList.remove("border-b-2");
+					navHoverDiv3.classList.remove("border-b-2");
+				} else {
+					navDivFlex.classList.add("flex")
+					navMenuDiv.classList.add("hidden");
+					burgerBtn.classList.remove("mt-3")
+
+					navTextDiv1.classList.remove("hover:text-orange-900");
+					navTextDiv2.classList.remove("hover:text-orange-900");
+					navTextDiv3.classList.remove("hover:text-orange-900");
+
+					navHoverDiv1.classList.add("border-b-2");
+					navHoverDiv2.classList.add("border-b-2");
+					navHoverDiv3.classList.add("border-b-2");
+				}
+				 
+			} else {
+				// click both outside link and outside menu, hide menu
+				navDivFlex.classList.add("flex")
+				navMenuDiv.classList.add("hidden");
+				burgerBtn.classList.remove("mt-3")
+
+				navTextDiv1.classList.remove("hover:text-orange-900");
+				navTextDiv2.classList.remove("hover:text-orange-900");
+				navTextDiv3.classList.remove("hover:text-orange-900");
+
+				navHoverDiv1.classList.add("border-b-2");
+				navHoverDiv2.classList.add("border-b-2");
+				navHoverDiv3.classList.add("border-b-2");
+			}
 		}
-	  }
-	  
 	}
 	function checkParent(t, elm) {
-	  while(t.parentNode) {
-		if( t == elm ) {return true;}
-		t = t.parentNode;
-	  }
-	  return false;
+		while (t.parentNode) {
+			if (t == elm) {
+				return true;
+			}
+			t = t.parentNode;
+		}
+		return false;
 	}
 </script>
 

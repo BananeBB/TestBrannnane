@@ -242,5 +242,29 @@ const addReview = (ev)=>{
 document.addEventListener("DOMContentLoaded", ()=>{
     document.getElementById("submit").addEventListener("click", addReview);
 });
+
+
+// Sprachauswahl
+const openLanguageMenu = (ev)=>{
+    ev.preventDefault();
+
+    var languageDropdown = document.getElementById("languageDropdown")
+    var navMenuDiv = document.getElementById("navDivFlex");
+    if (languageDropdown.classList.contains("hidden")) {
+        languageDropdown.classList.remove("hidden")
+        navMenuDiv.class.classList.add("hidden")
+    }
+    else {
+        languageDropdown.classList.add("hidden")
+    }
+
+    // zum Anzeigen in Konsole
+    console.log(JSON.stringify(newReview));
+    // lokal speichern
+
+}
+document.addEventListener("DOMContentLoaded", ()=>{
+    document.getElementById("languageBtn").addEventListener("click", openLanguageMenu);
+});
         
         

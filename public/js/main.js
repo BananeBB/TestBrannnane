@@ -1,3 +1,5 @@
+
+
 //Scrollen ändert den Header        
 window.onscroll = function() {
     var header = document.getElementById('header');
@@ -7,6 +9,7 @@ window.onscroll = function() {
     var navHoverDiv1 = document.getElementById('navHoverDiv1');
     var navHoverDiv2 = document.getElementById('navHoverDiv2');
     var navHoverDiv3 = document.getElementById('navHoverDiv2');
+    var burgerButton = document.getElementById('burgerButton');
     if (window.scrollY > 5) {
         header.classList.remove("gradient");
         header.classList.add("bg-blue-100");
@@ -20,6 +23,9 @@ window.onscroll = function() {
 
         navHoverDiv1.classList.remove("border-white")
         navHoverDiv1.classList.add("border-gray-800")
+
+        burgerButton.classList.remove("text-white")
+        burgerButton.classList.add("text-gray-800")
     } else {
         header.classList.remove("bg-blue-100");
         header.classList.add("gradient");
@@ -33,6 +39,9 @@ window.onscroll = function() {
 
         navHoverDiv1.classList.remove("border-gray-800")
         navHoverDiv1.classList.add("border-white")
+
+        burgerButton.classList.remove("text-gray-800")
+        burgerButton.classList.add("textwhite")
     }
 }
 

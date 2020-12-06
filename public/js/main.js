@@ -8,7 +8,7 @@ window.onscroll = function() {
     var navTextDiv3 = document.getElementById('navTextDiv3');
     var navHoverDiv1 = document.getElementById('navHoverDiv1');
     var navHoverDiv2 = document.getElementById('navHoverDiv2');
-    var navHoverDiv3 = document.getElementById('navHoverDiv2');
+    var navHoverDiv3 = document.getElementById('navHoverDiv3');
     var burgerButton = document.getElementById('burgerButton');
     var languageBtn = document.getElementById('languageBtn');
     if (window.scrollY > 5) {
@@ -21,10 +21,18 @@ window.onscroll = function() {
         navTextDiv2.classList.add("text-gray-800");
         navTextDiv3.classList.remove("text-white");
         navTextDiv3.classList.add("text-gray-800");
-
-        navHoverDiv1.classList.remove("border-white")
-        navHoverDiv1.classList.add("border-gray-800")
-
+        if (navHoverDiv1.classList.contains("border-white")) {
+            navHoverDiv1.classList.remove("border-white")
+            navHoverDiv1.classList.add("border-gray-800")
+        }
+        if (navHoverDiv2.classList.contains("border-white")) {
+            navHoverDiv2.classList.remove("border-white")
+            navHoverDiv2.classList.add("border-gray-800")
+        }
+        if (navHoverDiv3.classList.contains("border-white")) {
+            navHoverDiv3.classList.remove("border-white")
+            navHoverDiv3.classList.add("border-gray-800")
+        }
         burgerButton.classList.remove("text-white")
         burgerButton.classList.add("text-gray-800")
 
@@ -41,8 +49,18 @@ window.onscroll = function() {
         navTextDiv3.classList.remove("text-gray-800");
         navTextDiv3.classList.add("text-white");
 
-        navHoverDiv1.classList.remove("border-gray-800")
-        navHoverDiv1.classList.add("border-white")
+        if (navHoverDiv1.classList.contains("border-gray-800")) {
+            navHoverDiv1.classList.remove("border-gray-800")
+            navHoverDiv1.classList.add("border-white")
+        }
+        if (navHoverDiv2.classList.contains("border-gray-800")) {
+            navHoverDiv2.classList.remove("border-gray-800")
+            navHoverDiv2.classList.add("border-white")
+        }
+        if (navHoverDiv3.classList.contains("border-gray-800")) {
+            navHoverDiv3.classList.remove("border-gray-800")
+            navHoverDiv3.classList.add("border-white")
+        }
 
         burgerButton.classList.remove("text-gray-800")
         burgerButton.classList.add("textwhite")

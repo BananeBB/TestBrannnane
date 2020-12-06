@@ -50,15 +50,7 @@
             }
         </style>
 
-        <!--social media icons drop-->
-        <script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
-        <script src="https://unpkg.com/tippy.js@4"></script>
-        <script>
-        //Init tooltips
-        tippy(".link", {
-            placement: "bottom",
-        });
-        </script>
+        
 
     </head>
 
@@ -77,9 +69,9 @@
 
                     <!--Für kleiner Geräte Burger-Menü togglen bzw für größere verbergen-->
                     <div class="lg:hidden block pl-6 md:pl-0">
-                        <button id="burgerButton" class="flex items-center text-white hover:text-orange-900">
+                        <button id="burgerButton" class="link flex items-center text-white hover:text-orange-900" data-tippy-content="Menü">
                             <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <title>Menu</title>
+                                <title>Menü</title>
                                 <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
                             </svg>
                         </button>
@@ -514,6 +506,16 @@
                 }
                 return false;
             }
+        </script>
+
+        <!--social media icons drop-->
+        <script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
+        <script src="https://unpkg.com/tippy.js@4"></script>
+        <script>
+        //Init tooltips
+        tippy(".link", {
+            placement: "bottom",
+        });
         </script>
     </body>
 </html>

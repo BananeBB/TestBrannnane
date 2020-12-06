@@ -10,6 +10,7 @@ window.onscroll = function() {
     var navHoverDiv2 = document.getElementById('navHoverDiv2');
     var navHoverDiv3 = document.getElementById('navHoverDiv2');
     var burgerButton = document.getElementById('burgerButton');
+    var languageBtn = document.getElementById('languageBtn');
     if (window.scrollY > 5) {
         header.classList.remove("gradient");
         header.classList.add("bg-blue-100");
@@ -26,6 +27,9 @@ window.onscroll = function() {
 
         burgerButton.classList.remove("text-white")
         burgerButton.classList.add("text-gray-800")
+
+        languageBtn.classList.remove("text-white");
+        languageBtn.classList.add("text-gray-800");
     } else {
         header.classList.remove("bg-blue-100");
         header.classList.add("gradient");
@@ -42,6 +46,9 @@ window.onscroll = function() {
 
         burgerButton.classList.remove("text-gray-800")
         burgerButton.classList.add("textwhite")
+
+        languageBtn.classList.remove("text-gray-800");
+        languageBtn.classList.add("text-white");
     }
 }
 

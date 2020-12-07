@@ -10,28 +10,23 @@ window.onload = function(){
 
         for (let review of reviews) {
             
-            console.log(JSON.stringify(reviews));
+            //console.log(JSON.stringify(reviews));
 
             let reviewLi = document.createElement("li");
             reviewLi.setAttribute("class", "slider__frame glide__slide rounded-3xl border-2 border-gray-300 bg-gray-100 p-5");
             reviewLi.setAttribute("style", "width: 181.25px");
 
-            let reviewID = document.createElement("p");
-            reviewID.className = "";
-            reviewID.innerHTML = review.id;
-            reviewLi.appendChild(reviewID);
-
             let reviewUsername = document.createElement("p");
-            reviewUsername.className = "text-lg font-bold";
+            reviewUsername.className = "text-xl font-bold";
             reviewUsername.innerHTML = review.username;
             reviewLi.appendChild(reviewUsername);
 
             let reviewDate = document.createElement("p");
-            reviewDate.className = "";
             reviewDate.innerHTML = review.date;
             reviewLi.appendChild(reviewDate);
 
             let reviewRating = document.createElement("p");
+            reviewRating.className = "mt-1";
             for (var x = 1; x <= 5; x++) {
                 if (x <= review.rating) {
                     let starChecked = document.createElement("span");
@@ -47,8 +42,8 @@ window.onload = function(){
             reviewLi.appendChild(reviewRating);
 
             let reviewDescr = document.createElement("p");
-            reviewDescr.className = "mt-3";
-            reviewDescr.innerHTML = review.text;
+            reviewDescr.className = "break-words mt-2 h-32 sm:h-48 md:h-40 lg:h-40 text-justify";
+            reviewDescr.innerHTML = review.description;
             reviewLi.appendChild(reviewDescr);
 
             reviewUl.insertBefore(reviewLi, reviewUl.children[i]);
@@ -112,7 +107,6 @@ window.onload = function(){
     }*/
 
     function generateBullets(reviews) {
-        console.log(reviews.length)
         var countBullet = 0
         let reviewBullets = document.getElementById("bullets")
 
@@ -142,10 +136,10 @@ window.onload = function(){
             focusAt: "center",
             gap: 30,
             breakpoints: {
-                800: {
+                1024: {
                     perView: 2,
                 },
-                480: {
+                640: {
                     perView: 1,
                 },
             },
@@ -155,38 +149,55 @@ window.onload = function(){
     }
             
 
-    // Ein neues Review hinzufügen
-    let newReview = [];
-    const addReview = (ev)=>{
-        ev.preventDefault();
-        let review = {
-            username: document.getElementById("username").value,
-            rating: document.getElementById("rating").value,
-            description: document.getElementById("description").value
-        }
-        newReview.push(review);
-        // zum Anzeigen in Konsole
-        console.log(JSON.stringify(newReview));
 
-        // http-request durchführen --> zum server schicken
-        var request = new XMLHttpRequest();
-        request.open("POST","http://localhost:4000/reviews/add");
-        request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-        request.send(JSON.stringify(review));
-        console.log("Review: " + JSON.stringify(review));
-
-    
-
-
-        //Form zurücksetzen
-        document.querySelector("form").reset();
-
-        
-        // lokal speichern
-
-    }
-    document.addEventListener("DOMContentLoaded", ()=>{
-        document.getElementById("submit").addEventListener("click", addReview);
-    });
 
 };
+
+// Ein neues Review hinzufügen
+let newReview = [];
+const addReview = (ev)=>{
+    ev.preventDefault();
+
+    const monthNames = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+    const weekdays = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
+    const dateObj = new Date();
+    console.log(dateObj)
+    const month = monthNames[dateObj.getMonth()];
+    const weekday = weekdays[dateObj.getDay()];
+    const day = String(dateObj.getDate()).padStart(2, '0');
+    const year = dateObj.getFullYear();
+    const hours = dateObj.getHours();
+    const minutes = dateObj.getMinutes()<10?'0':'' + dateObj.getMinutes();
+    const outputDate = weekday + ', ' + day + '. ' + month + ' ' + year + ', ' + hours + ":" + minutes + " Uhr";
+    console.log(outputDate)
+
+    let review = {
+        username: document.getElementById("username").value,
+        date: outputDate,
+        rating: document.getElementById("rating").value,
+        description: document.getElementById("description").value
+    }
+    newReview.push(review);
+    // zum Anzeigen in Konsole
+    console.log(JSON.stringify(newReview));
+
+    // http-request durchführen --> zum server schicken
+    var request = new XMLHttpRequest();
+    request.open("POST","http://localhost:4000/reviews/add");
+    request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    request.send(JSON.stringify(review));
+    console.log("Review: " + JSON.stringify(review));
+
+
+
+
+    //Form zurücksetzen
+    document.querySelector("form").reset();
+
+    
+    // lokal speichern
+
+}
+document.addEventListener("DOMContentLoaded", ()=>{
+    document.getElementById("submit").addEventListener("click", addReview);
+});

@@ -94,7 +94,7 @@ _paq.push(["enableLinkTracking"]);
 
 //Glide - Reviews aus db.json als object erstellen
 
-fetch("https://my-json-server.typicode.com/BananeBB/TestBrannnane/reviews/")
+fetch("http://localhost:4000/reviews/")
     .then((response) => response.json())
     .then((json) => generateReviews(json));
 
@@ -254,9 +254,20 @@ const addReview = (ev)=>{
     let review = {
         username: document.getElementById("username").value,
         rating: document.getElementById("rating").value,
-        text: document.getElementById("description").value
+        description: document.getElementById("description").value
     }
     newReview.push(review);
+    var request = new XMLHttpRequest();
+    request.addEventListener('load', function(event) {
+        if (request.status >= 200 && request.status < 300) {
+            console.log(request.responseText);
+        } else {
+            console.warn(request.statusText, request.responseText);
+        }
+    });
+    request.open("POST","http://localhost:4000/reviews/add");
+    request.send(review);
+
     document.querySelector("form").reset();
 
     // zum Anzeigen in Konsole

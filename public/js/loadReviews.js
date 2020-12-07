@@ -13,7 +13,7 @@ window.onload = function(){
             //console.log(JSON.stringify(reviews));
 
             let reviewLi = document.createElement("li");
-            reviewLi.setAttribute("class", "slider__frame glide__slide rounded-3xl border-2 border-gray-300 bg-gray-100 p-5");
+            reviewLi.setAttribute("class", "slider__frame glide__slide rounded-2xl border border-gray-500 backgroundReviews p-5");
             reviewLi.setAttribute("style", "width: 181.25px");
 
             let reviewUsername = document.createElement("p");
@@ -30,12 +30,12 @@ window.onload = function(){
             for (var x = 1; x <= 5; x++) {
                 if (x <= review.rating) {
                     let starChecked = document.createElement("span");
-                    starChecked.className = "fa fa-star checked";
+                    starChecked.className = "fa fa-star checked mr-1";
                     reviewRating.insertBefore(starChecked, reviewRating.children[x]);
                 }
                 else {
                     let star = document.createElement("span");
-                    star.className = "fa fa-star";
+                    star.className = "fa fa-star mr-1";
                     reviewRating.insertBefore(star, reviewRating.children[x]);
                 }
             }

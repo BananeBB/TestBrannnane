@@ -36,6 +36,9 @@
             .gradient {
                 background: linear-gradient(90deg, #315923 0%, #ffe13a 100%);
             }
+            .backgroundReviews {
+                background: #0000001a
+            }
         </style>
 
         <!-- Glide reviews -->
@@ -290,24 +293,31 @@
 
 
                 <!--Input review-->
-                <div class="rounded-xl border-2 border-gray-400 bg-gray-100 text-gray-600 m-2 sm:mx-10 lg:mx-64 p-8">
+                <div class="rounded-xl border border-gray-500 backgroundReviews text-gray-600 shadow-xl m-2 sm:mx-10 lg:mx-64 p-6">
                     <form method="POST">
-                        <label for="username">Username:</label><br>
-                        <input class="border-2 border-transparent border-blue-300 rounded-md shadow-lg" type="text" id="username" name="username"><br>
+                        <label class="font-bold" for="username">Username:</label>
+                        <input class="border-2 border-transparent border-blue-300 rounded-md shadow-lg ml-2" type="text" id="username" name="username" maxlength="20" placeholder="max. 20 Zeichen"><br>
 
-                        <label class="mt-2" for="rating">Bewertung in Sterne: </label>
-                        <select class="border-2 border-transparent border-blue-300 rounded-md shadow-lg mt-2" id="rating" name="rating" value="1">
+                        <label class="font-bold" for="rating">Bewertung in Sterne: </label>
+                        <select class="border-2 border-transparent border-blue-300 rounded-md shadow-lg mt-2 ml-2" id="rating" name="rating" value="1">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
-                        </select><br>
+                        </select><br><br>
 
-                        <label class="mt-2" for="description">Beschreibung:</label><br>
-                        <input class="h-24 border-2 border-transparent border-blue-300 rounded-md shadow-lg mt-2" type="textarea" id="description" name="description" maxlength="250"><br>
+                        <label class="font-bold" for="description">Beschreibung:</label><br>
+                        <textarea class="border-2 border-transparent border-blue-300 rounded-md shadow-lg mt-2 w-full" type="textarea" id="description" rows="4" name="description" maxlength="250" placeholder="max. 250 Zeichen"></textarea><br>
                         
-                        <button class="rounded-3xl shadow-2xl bg-orange-700 hover:bg-orange-600 text-white text-center mt-4 py-1 px-2" id="submit">Daten senden
+                        <button class="rounded-3xl shadow-2xl bg-orange-700 hover:bg-orange-600 text-white text-center mt-4 py-1 px-2" id="submit">Daten senden</button>
+
+                        <div class="box-content mt-6 hover:text-orange-400 transition duration-300">
+                            <span class="fa fa-star" id="star1"></span>
+                            <span class="fa fa-star" id="star1"></span>
+                            <span class="fa fa-star" id="star1"></span>
+                        </div>
+                            
                     </form> 
                 </div>
 

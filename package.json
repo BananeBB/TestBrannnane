@@ -1,5 +1,10 @@
 {
+  "name": "WebseiteBrannnane",
+  "scripts": {
+    "build-css": "tailwindcss build src/style.css -o public/css/style.css"
+  },
   "dependencies": {
-    "@glidejs/glide": "^3.4.1"
+    "@glidejs/glide": "^3.4.1",
+    "tailwindcss": "^1.9.6"
   }
 }

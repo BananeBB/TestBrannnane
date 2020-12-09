@@ -161,7 +161,6 @@ const addReview = (ev)=>{
     const monthNames = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
     const weekdays = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
     const dateObj = new Date();
-    console.log(dateObj)
     const month = monthNames[dateObj.getMonth()];
     const weekday = weekdays[dateObj.getDay()];
     const day = String(dateObj.getDate()).padStart(2, '0');
@@ -171,25 +170,32 @@ const addReview = (ev)=>{
     const outputDate = weekday + ', ' + day + '. ' + month + ' ' + year + ', ' + hours + ":" + minutes + " Uhr";
     console.log(outputDate)
 
+    
+    let rateElements = document.getElementsByName("rate");
+    let rateScore = 4;
+    console.log(rateElements);         
+        for(i = 0; i < rateElements.length; i++) { 
+            if(rateElements[i].checked) 
+                rateScore = rateElements[i].value;
+                return rateScore;
+        }
+
     let review = {
         username: document.getElementById("username").value,
         date: outputDate,
-        rating: document.getElementById("rating").value,
+        rating: rateScore,
         description: document.getElementById("description").value
     }
     newReview.push(review);
     // zum Anzeigen in Konsole
     console.log(JSON.stringify(newReview));
+    console.log("Review: " + JSON.stringify(review)); 
 
     // http-request durchführen --> zum server schicken
     var request = new XMLHttpRequest();
     request.open("POST","http://localhost:4000/reviews/add");
     request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     request.send(JSON.stringify(review));
-    console.log("Review: " + JSON.stringify(review));
-
-
-
 
     //Form zurücksetzen
     document.querySelector("form").reset();

@@ -21638,6 +21638,34 @@ video {
           animation: bounce 1s infinite;
 }
 
+.star-widget input{
+}
+
+.star-widget label{
+  float: right;
+  transition: all 0.2s ease;
+}
+
+.star-widget input:not(:checked) ~ label:hover,
+.star-widget input:not(:checked) ~ label:hover ~ label{
+  --text-opacity: 1;
+  color: #f6ad55;
+  color: rgba(246, 173, 85, var(--text-opacity));
+}
+
+.star-widget input:checked ~ label{
+  --text-opacity: 1;
+  color: #f6ad55;
+  color: rgba(246, 173, 85, var(--text-opacity));
+}
+
+.star-widget input#rate-5:checked ~ label{
+  --text-opacity: 1;
+  color: #fbd38d;
+  color: rgba(251, 211, 141, var(--text-opacity));
+  text-shadow:  0 0 0 20px #952;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -105589,3 +105617,4 @@ video {
             animation: bounce 1s infinite;
   }
 }
+

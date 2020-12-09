@@ -4,7 +4,7 @@
 
 
 .star-widget input{
-    
+    display: none;
 }
 
 .star-widget label{

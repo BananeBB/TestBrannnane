@@ -170,14 +170,21 @@ const addReview = (ev)=>{
     const outputDate = weekday + ', ' + day + '. ' + month + ' ' + year + ', ' + hours + ":" + minutes + " Uhr";
     console.log(outputDate)
 
-    
+    /*
     let rateElements = document.getElementsByName("rate");
     let rateScore = 4;
     console.log(rateElements);         
         for(i = 0; i < rateElements.length; i++) { 
+            console.log(String( rateElements[i].value));
+        }*/
+    
+    let rateElements = document.getElementsByName("rate");
+    let rateScore = 1;
+    console.log(rateElements);         
+        for(i = 0; i < rateElements.length; i++) { 
             if(rateElements[i].checked) 
                 rateScore = rateElements[i].value;
-                return rateScore;
+                
         }
 
     let review = {

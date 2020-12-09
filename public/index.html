@@ -293,37 +293,36 @@
 
 
                 <!--Input review-->
-                <div class="rounded-xl border border-gray-500 backgroundReviews text-gray-600 shadow-xl m-2 sm:mx-10 lg:mx-64 p-6">
+                <div class="rounded-xl border border-gray-500 backgroundReviews text-gray-600 shadow-lg m-2 sm:mx-10 lg:mx-64 p-6">
                     <form method="POST">
                         <label class="font-bold" for="username">Username:</label>
                         <input class="border-2 border-transparent border-blue-300 rounded-md shadow-lg ml-2" type="text" id="username" name="username" maxlength="20" placeholder="max. 20 Zeichen"><br>
 
-                        <label class="font-bold" for="rating">Bewertung in Sterne: </label>
-                        <select class="border-2 border-transparent border-blue-300 rounded-md shadow-lg mt-2 ml-2" id="rating" name="rating" value="1">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select><br><br>
+                        <div class="flex justify-items-start mt-2">
+                            <div class="font-bold">
+                                <p>
+                                    Bewertung:
+                                </p>
+                            </div>
+                            <div class="star-widget mt-1 ml-2">
+                                <input type="radio" name="rate" id="rate-5" value="5">
+                                <label for="rate-5" class="fa fa-star mr-1"></label>
+                                <input type="radio" name="rate" id="rate-4" value="4">
+                                <label for="rate-4" class="fa fa-star mr-1"></label>
+                                <input type="radio" name="rate" id="rate-3" value="3">
+                                <label for="rate-3" class="fa fa-star mr-1"></label>
+                                <input type="radio" name="rate" id="rate-2" value="2">
+                                <label for="rate-2" class="fa fa-star mr-1"></label>
+                                <input type="radio" name="rate" id="rate-1" value="1" checked>
+                                <label for="rate-1" class="fa fa-star mr-1"></label>
+                            </div>
+                        </div>
+                        
 
                         <label class="font-bold" for="description">Beschreibung:</label><br>
                         <textarea class="border-2 border-transparent border-blue-300 rounded-md shadow-lg mt-2 w-full" type="textarea" id="description" rows="4" name="description" maxlength="250" placeholder="max. 250 Zeichen"></textarea><br>
                         
-                        <button class="rounded-3xl shadow-2xl bg-orange-700 hover:bg-orange-600 text-white text-center mt-4 py-1 px-2" id="submit">Daten senden</button>
-
-                        <div class="star-widget mt-6">
-                            <input type="radio" name="rate" id="rate-5" value="5">
-                            <label for="rate-5" class="fa fa-star"></label>
-                            <input type="radio" name="rate" id="rate-4" value="4">
-                            <label for="rate-4" class="fa fa-star"></label>
-                            <input type="radio" name="rate" id="rate-3" value="3">
-                            <label for="rate-3" class="fa fa-star"></label>
-                            <input type="radio" name="rate" id="rate-2" value="2">
-                            <label for="rate-2" class="fa fa-star"></label>
-                            <input type="radio" name="rate" id="rate-1" value="1">
-                            <label for="rate-1" class="fa fa-star"></label>
-                        </div>
+                        <button class="rounded-3xl shadow-lg bg-orange-700 hover:bg-orange-600 text-white text-center mt-4 py-1 px-2" id="submit">Daten senden</button>
                             
                     </form> 
                 </div>

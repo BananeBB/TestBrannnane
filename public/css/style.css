@@ -21661,10 +21661,7 @@ video {
 }
 
 .star-widget input#rate-5:checked ~ label{
-  --text-opacity: 1;
-  color: #fbd38d;
-  color: rgba(251, 211, 141, var(--text-opacity));
-  text-shadow:  0 0 0 20px #952;
+  color: #ffb507;
 }
 
 @media (min-width: 640px) {

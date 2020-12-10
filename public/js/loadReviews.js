@@ -157,59 +157,83 @@ window.onload = function(){
 let newReview = [];
 const addReview = (ev)=>{
     ev.preventDefault();
+ 
+    let inputUsername = document.getElementById("username").value;
+    let inputDesription = document.getElementById("description").value;
 
-    const monthNames = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
-    const weekdays = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
-    const dateObj = new Date();
-    const month = monthNames[dateObj.getMonth()];
-    const weekday = weekdays[dateObj.getDay()];
-    const day = String(dateObj.getDate()).padStart(2, '0');
-    const year = dateObj.getFullYear();
-    const hours = dateObj.getHours();
-    const minutes = dateObj.getMinutes()<10?'0':'' + dateObj.getMinutes();
-    const outputDate = weekday + ', ' + day + '. ' + month + ' ' + year + ', ' + hours + ":" + minutes + " Uhr";
-    console.log(outputDate)
-
-    /*
-    let rateElements = document.getElementsByName("rate");
-    let rateScore = 4;
-    console.log(rateElements);         
-        for(i = 0; i < rateElements.length; i++) { 
-            console.log(String( rateElements[i].value));
-        }*/
-    
-    let rateElements = document.getElementsByName("rate");
-    let rateScore = 1;
-    console.log(rateElements);         
-        for(i = 0; i < rateElements.length; i++) { 
-            if(rateElements[i].checked) 
-                rateScore = rateElements[i].value;
-                
+    if (inputUsername == "" && inputDesription == "") {
+        document.getElementById("username").classList.remove("border-blue-300");
+        document.getElementById("username").classList.add("border-red-400");
+        document.getElementById("description").classList.remove("border-blue-300");
+        document.getElementById("description").classList.add("border-red-400");
+        alert("Bitte geben Sie einen Username und eine Beschreibung ein.");
+        document.getElementById("username").classList.remove("border-red-400");
+        document.getElementById("username").classList.add("border-blue-300");
+        document.getElementById("username").classList.add("border-red-400");
+        document.getElementById("description").classList.remove("border-red-400");
+        document.getElementById("description").classList.add("border-blue-300");
         }
+    else {
+        if (inputUsername == "" || inputDesription == "") {
+            if (inputUsername == "") {
+                document.getElementById("username").classList.remove("border-blue-300");
+                document.getElementById("username").classList.add("border-red-400");
+                alert("Bitte geben Sie einen Username ein.");
+                document.getElementById("username").classList.remove("border-red-400");
+                document.getElementById("username").classList.add("border-blue-300");
+            }
+            if (inputDesription == "") {
+                document.getElementById("description").classList.remove("border-blue-300");
+                document.getElementById("description").classList.add("border-red-400");
+                alert("Bitte geben Sie eine Beschreibung ein.");
+                document.getElementById("description").classList.remove("border-red-400");
+                document.getElementById("description").classList.add("border-blue-300");
+            }
+        }
+        else {
+            const monthNames = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+            const weekdays = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
+            const dateObj = new Date();
+            const month = monthNames[dateObj.getMonth()];
+            const weekday = weekdays[dateObj.getDay()];
+            const day = String(dateObj.getDate()).padStart(2, '0');
+            const year = dateObj.getFullYear();
+            const hours = dateObj.getHours();
+            const minutes = dateObj.getMinutes()<10?'0':'' + dateObj.getMinutes();
+            const outputDate = weekday + ', ' + day + '. ' + month + ' ' + year + ', ' + hours + ":" + minutes + " Uhr";
+            console.log(outputDate)
+            
+            let rateElements = document.getElementsByName("rate");
+            let rateScore = 1;       
+                for(i = 0; i < rateElements.length; i++) { 
+                    if(rateElements[i].checked) 
+                        rateScore = rateElements[i].value;                
+                }
 
-    let review = {
-        username: document.getElementById("username").value,
-        date: outputDate,
-        rating: rateScore,
-        description: document.getElementById("description").value
+            let review = {
+                username: document.getElementById("username").value,
+                date: outputDate,
+                rating: rateScore,
+                description: document.getElementById("description").value
+            }
+            newReview.push(review);
+            // zum Anzeigen in Konsole
+            console.log("Review: " + JSON.stringify(review)); 
+
+            // http-request durchführen --> zum server schicken
+            var request = new XMLHttpRequest();
+            request.open("POST","http://localhost:4000/reviews/add");
+            request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            request.send(JSON.stringify(review));
+
+            // Seite neu laden
+            window.onbeforeunload = null;
+            window.location.reload();
+
+            //Form zurücksetzen
+            document.querySelector("form").reset();
+        }
     }
-    newReview.push(review);
-    // zum Anzeigen in Konsole
-    console.log(JSON.stringify(newReview));
-    console.log("Review: " + JSON.stringify(review)); 
-
-    // http-request durchführen --> zum server schicken
-    var request = new XMLHttpRequest();
-    request.open("POST","http://localhost:4000/reviews/add");
-    request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    request.send(JSON.stringify(review));
-
-    //Form zurücksetzen
-    document.querySelector("form").reset();
-
-    
-    // lokal speichern
-
 }
 document.addEventListener("DOMContentLoaded", ()=>{
     document.getElementById("submit").addEventListener("click", addReview);

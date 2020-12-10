@@ -14,15 +14,11 @@
 
 .star-widget input:not(:checked) ~ label:hover,
 .star-widget input:not(:checked) ~ label:hover ~ label{
-    --text-opacity: 1;
-    color: #f6ad55;
-    color: rgba(246, 173, 85, var(--text-opacity));
+    color: #ffa500;
 }
 
 .star-widget input:checked ~ label{
-    --text-opacity: 1;
-    color: #f6ad55;
-    color: rgba(246, 173, 85, var(--text-opacity));
+    color: #ffa500;
 }
 
 .star-widget input#rate-5:checked ~ label{

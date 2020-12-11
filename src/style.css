@@ -25,3 +25,8 @@
     color: #ffb507;
 }
 
+@media only screen and (max-width: 1026px) {
+    .hideOnSmallScreen {
+        display: none;
+    }
+}

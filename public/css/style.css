@@ -21660,6 +21660,12 @@ video {
   color: #ffb507;
 }
 
+@media only screen and (max-width: 1026px) {
+  .hideOnSmallScreen {
+    display: none;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -105611,4 +105617,3 @@ video {
             animation: bounce 1s infinite;
   }
 }
-

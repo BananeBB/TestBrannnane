@@ -1,6 +1,6 @@
 //Glide - Reviews aus db.json als object erstellen
 window.onload = function(){
-    fetch("http://maxefaxe.flayinahook.de/reviews/")
+    fetch("https://maxefaxe.flayinahook.de/reviews/")
         .then((response) => response.json())
         .then((json) => generateReviews(json));
 
@@ -222,7 +222,7 @@ const addReview = (ev)=>{
 
             // http-request durchführen --> zum server schicken
             var request = new XMLHttpRequest();
-            request.open("POST","http://maxefaxe.flayinahook.de/reviews/add");
+            request.open("POST","https://maxefaxe.flayinahook.de/reviews/add");
             request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             request.send(JSON.stringify(review));
 

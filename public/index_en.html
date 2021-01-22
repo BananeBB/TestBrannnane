@@ -1,358 +1,578 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Brannnane - Startseite</title>
+        <meta name="description" content="brannnane, alles über die legendäre banane aus brandenburg" />
+        <meta name="keywords" content="brannnane, brannnane aus brandenburg, brandenburg, havel, obst, banane, minions" />
+        <meta name="author" content="gruppe 2" />
+        <meta name="google-site-verification" content="MksmlF7s8tbJj-SPgD7LbkeYcK4y3d2R8Y_GLyRUVN8" />
+        <meta name="msvalidate.01" content="67D3060150372146922089E67A599F3F" />
+        <meta name="yandex-verification" content="9e4e0e05d6d8b576" />
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Brannnane - Homepage</title>
-	<meta name="description" content="brannnane, alles über die legendäre banane aus brandenburg">
-	<meta name="keywords" content="brannnane, brannnane aus brandenburg, brandenburg, havel, fruits, banana, minions"> 
-	<meta name="author" content="gruppe 2">
-	<meta name="google-site-verification" content="MksmlF7s8tbJj-SPgD7LbkeYcK4y3d2R8Y_GLyRUVN8" />
-	<meta name="msvalidate.01" content="67D3060150372146922089E67A599F3F" />
-	<meta name="yandex-verification" content="9e4e0e05d6d8b576" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-182186222-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-182186222-1"></script>
-<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag() {
-		dataLayer.push(arguments);
-	}
-	gtag("js", new Date());
+            gtag("config", "UA-182186222-1");
+        </script>
 
-	gtag("config", "UA-182186222-1");
-</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script language="JavaScript" type="text/javascript" src="js/main.js"></script>
+        <script language="JavaScript" src="js/loadReviews.js"></script>
+        
 
-<script language="JavaScript" type="text/javascript" src="js/main.js"></script>
+        <!--tailwindcss integrieren-->
+        <link rel="stylesheet" href="css/style.css" />
+        <!-- Define your gradient here - use online tools to find a gradient matching your branding-->
+        <style>
+            .gradient {
+                background: linear-gradient(90deg, #315923 0%, #ffe13a 100%);
+            }
+            .backgroundReviews {
+                background: #0000001a
+            }
+        </style>
 
-  <!-- Font Awesome if you need it
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-  -->
-  <link rel="stylesheet" href="style.css">
-  <!--Replace with your tailwind.css once created-->
+        <!-- Glide reviews -->
+        <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+        <!-- Styles Glide -->
+        <link rel="stylesheet" href="css/glide.core.css" />
+        <!-- Optional Style Glide -->
+        <link rel="stylesheet" href="css/glide.theme.css" />
 
-<!-- Define your gradient here - use online tools to find a gradient matching your branding-->
-<style>
-	.gradient {
-		background: linear-gradient(90deg,#315923 0%, #ffe13a 100%);
-	}
-</style>
-</head>
+        <!-- Font Awesome Icon Library für Sterne in Bewertung-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <style>
+            .checked {
+                color: orange;
+            }
+        </style>
 
-<body class="leading-normal tracking-normal text-white gradient font-sans">
-	<!--Nav-->
-	<header>
-		<nav id="header" class="fixed top-0 w-full z-30 shadow-2xl gradient">
-			<div id="navDivFlex" class="w-full container items-center flex flex-wrap justify-between mx-auto py-3">
-				<!---Logo einfügen-> Es müsste noch angepasst werden, dass das Logo bleibt, wenn man im Handy Format ist.
-				<div class="">
-					
-					<img src="img/logo4.png" alt="logo brannnane" class="hidden lg:block lg:rounded-lg shadow-2xl" />
-					
-				</div>
-				-->
+        
 
-				<!--Für kleiner Geräte Burger-Menü togglen bzw für größere verbergen-->
-				<div class="lg:hidden block pl-6 md:pl-0">
-					<button id="burgerButton" class="flex items-center text-white hover:text-orange-900">
-						<svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-							<title>Menu</title>
-							<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-						</svg>
-					</button>
-				</div>
+    </head>
 
-				<!--HTML Code für größere Bildschirme-->
-				<div class="hidden lg:flex flex-grow z-20 justify-start" id="nav-content">
-					<ul class="list-reset lg:flex justify-start">
-						<li id="navHoverDiv1" class="mr-3 border-b-2 border-white hover:border-orange-900">
-							<a id="navTextDiv1" class="inline-block text-xl text-white font-bold lg:m-auto py-2 px-6" href="index.html">Home</a>
-						</li>
-						<li id="navHoverDiv2" class="mr-3 border-b-2 border-transparent hover:border-orange-900">
-							<a id="navTextDiv2" class="inline-block text-xl text-white lg:m-auto py-2 px-6" href="blog.html">Blog</a>
-						</li>
-						<li id="navHoverDiv3" class="mr-3 border-b-2 border-transparent hover:border-orange-900">
-							<a id="navTextDiv3" class="inline-block text-xl text-white lg:m-auto py-2 px-6" href="about.html">About</a>
-						</li>
-					</ul>
-				</div>
-			</div>
+    <body class="leading-normal tracking-normal text-white gradient font-sans">
+        <!--Nav-->
+        <header>
+            <nav id="header" class="fixed top-0 w-full z-30 shadow-2xl transition duration-75 gradient">
+                <div id="navDivFlex" class="w-full container items-center flex flex-wrap justify-between mx-auto py-3">
+                    <!---Logo einfügen-> Es müsste noch angepasst werden, dass das Logo bleibt, wenn man im Handy Format ist.
+                    <div class="">
+                        
+                        <img src="img/logo4.png" alt="logo brannnane" class="hidden lg:block lg:rounded-lg shadow-2xl" />
+                        
+                    </div>
+                    -->
 
-			<div class="">
-				<hr class="border-b border-gray-600 opacity-50 shadow-2xl my-0 py-0"/>
-			</div>
-			
-		</nav>
-	</header>
+                    <!--Für kleiner Geräte Burger-Menü togglen bzw für größere verbergen-->
+                    <div class="lg:hidden block pl-6 md:pl-0">
+                        <button id="burgerButton" class="flex items-center text-white hover:text-orange-900 transition duration-75" title="Menü">
+                            <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <title>Menü</title>
+                                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                            </svg>
+                        </button>
+                    </div>
 
-	<!--Sprachauswahl-->
-	<div id="" class="container mx-auto px-2 sm:px-0 md:px-0 lg:px-0 pt-16 lg:pt-24">
-		<!--globus-->
-		<div class="flex justify-end">
-			<button id="languageBtn" class="block h-10 w-10" data-tippy-content="Language">
-				<svg class="fill-current  text-xl text-gray-800 hover:text-orange-900" role="img" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
-					<title></title>
-					<path stroke="" stroke-width="2" d="M 9.99,0.00 C 9.63,0.00 9.27,0.02 8.92,0.06 8.59,0.09 8.27,0.15 7.95,0.21 7.89,0.23 7.82,0.24 7.76,0.25 5.89,0.68 4.17,1.64 2.83,3.02 2.70,3.14 2.58,3.28 2.46,3.41 -1.17,7.58 -0.73,13.91 3.44,17.54 7.43,21.01 13.44,20.78 17.15,17.01 17.27,16.88 17.40,16.75 17.52,16.61 19.12,14.79 20.00,12.44 20.00,10.01 20.00,4.48 15.52,0.00 9.99,0.00 Z M 3.27,3.52 C 3.33,3.46 3.38,3.41 3.44,3.36 3.50,3.30 3.56,3.23 3.62,3.17 3.68,3.12 3.74,3.07 3.79,3.02 3.86,2.96 3.92,2.91 3.99,2.85 4.05,2.80 4.11,2.76 4.16,2.71 4.23,2.66 4.30,2.60 4.37,2.55 4.43,2.51 4.49,2.46 4.55,2.42 4.62,2.37 4.69,2.32 4.76,2.27 4.82,2.23 4.89,2.19 4.95,2.15 5.02,2.10 5.09,2.06 5.17,2.01 5.23,1.97 5.30,1.94 5.36,1.90 5.44,1.86 5.51,1.81 5.59,1.77 5.65,1.74 5.72,1.70 5.79,1.67 5.86,1.63 5.94,1.60 6.02,1.56 6.08,1.53 6.15,1.50 6.22,1.47 6.30,1.43 6.38,1.40 6.46,1.37 6.53,1.34 6.60,1.31 6.67,1.28 6.75,1.25 6.83,1.22 6.91,1.19 6.98,1.17 7.05,1.15 7.12,1.12 7.20,1.10 7.29,1.07 7.37,1.05 7.44,1.03 7.51,1.01 7.58,0.99 7.61,0.98 7.64,0.97 7.66,0.97 6.68,1.93 5.94,3.12 5.53,4.43 4.74,4.22 3.97,3.93 3.24,3.55 3.26,3.54 3.26,3.53 3.27,3.52 Z M 2.79,4.05 C 3.60,4.49 4.45,4.83 5.33,5.06 4.90,6.56 4.67,8.12 4.65,9.68 4.65,9.68 0.65,9.68 0.65,9.68 0.72,7.62 1.48,5.64 2.79,4.05 Z M 2.79,15.97 C 1.48,14.38 0.72,12.41 0.65,10.35 0.65,10.35 4.65,10.35 4.65,10.35 4.67,11.91 4.90,13.46 5.33,14.96 4.45,15.20 3.60,15.54 2.79,15.97 Z M 7.58,19.04 C 7.51,19.02 7.44,19.00 7.37,18.98 7.29,18.96 7.20,18.93 7.12,18.90 7.05,18.88 6.98,18.86 6.91,18.83 6.83,18.80 6.75,18.78 6.67,18.74 6.60,18.72 6.53,18.69 6.46,18.66 6.38,18.63 6.30,18.60 6.22,18.56 6.15,18.53 6.09,18.50 6.02,18.47 5.94,18.43 5.86,18.40 5.78,18.36 5.72,18.32 5.65,18.29 5.58,18.25 5.51,18.21 5.43,18.17 5.36,18.13 5.29,18.09 5.23,18.05 5.17,18.01 5.09,17.97 5.02,17.93 4.95,17.88 4.88,17.84 4.82,17.80 4.76,17.76 4.69,17.71 4.62,17.66 4.55,17.61 4.49,17.56 4.43,17.52 4.36,17.47 4.30,17.42 4.23,17.37 4.16,17.31 4.10,17.27 4.04,17.22 3.99,17.17 3.92,17.12 3.85,17.06 3.79,17.00 3.73,16.95 3.68,16.90 3.62,16.85 3.56,16.79 3.49,16.73 3.43,16.67 3.38,16.61 3.32,16.56 3.27,16.51 3.26,16.50 3.25,16.49 3.24,16.48 3.97,16.10 4.74,15.81 5.53,15.60 5.94,16.91 6.67,18.10 7.66,19.06 7.64,19.05 7.61,19.05 7.58,19.04 Z M 9.65,19.33 C 8.23,19.13 6.97,17.64 6.19,15.44 7.33,15.18 8.49,15.04 9.65,15.03 9.65,15.03 9.65,19.33 9.65,19.33 Z M 9.65,14.36 C 8.42,14.38 7.18,14.52 5.98,14.80 5.56,13.35 5.34,11.85 5.32,10.35 5.32,10.35 9.65,10.35 9.65,10.35 9.65,10.35 9.65,14.36 9.65,14.36 Z M 9.65,9.68 C 9.65,9.68 5.32,9.68 5.32,9.68 5.34,8.17 5.56,6.67 5.98,5.23 7.18,5.50 8.42,5.65 9.65,5.66 9.65,5.66 9.65,9.68 9.65,9.68 Z M 9.65,5.00 C 8.49,4.98 7.33,4.84 6.19,4.59 6.97,2.39 8.23,0.90 9.65,0.69 9.65,0.69 9.65,5.00 9.65,5.00 Z M 17.18,4.05 C 18.50,5.64 19.25,7.62 19.32,9.68 19.32,9.68 15.32,9.68 15.32,9.68 15.31,8.12 15.08,6.56 14.65,5.06 15.53,4.83 16.38,4.49 17.18,4.05 Z M 12.39,0.98 C 12.46,1.00 12.53,1.02 12.60,1.04 12.69,1.07 12.77,1.09 12.86,1.12 12.93,1.14 13.00,1.17 13.06,1.19 13.15,1.22 13.23,1.25 13.31,1.28 13.38,1.31 13.45,1.33 13.52,1.36 13.60,1.40 13.68,1.43 13.76,1.46 13.82,1.49 13.89,1.52 13.96,1.56 14.04,1.59 14.11,1.63 14.19,1.67 14.26,1.70 14.33,1.74 14.39,1.77 14.47,1.81 14.54,1.85 14.62,1.90 14.68,1.93 14.75,1.97 14.81,2.01 14.89,2.05 14.96,2.10 15.03,2.15 15.09,2.19 15.16,2.23 15.22,2.27 15.29,2.32 15.36,2.37 15.43,2.42 15.49,2.46 15.55,2.50 15.61,2.55 15.68,2.60 15.75,2.66 15.82,2.71 15.87,2.76 15.93,2.80 15.99,2.85 16.06,2.91 16.12,2.97 16.19,3.02 16.24,3.07 16.30,3.12 16.36,3.17 16.42,3.23 16.48,3.30 16.54,3.36 16.60,3.41 16.65,3.46 16.71,3.52 16.72,3.53 16.72,3.54 16.73,3.55 16.01,3.92 15.24,4.22 14.45,4.43 14.03,3.11 13.30,1.92 12.31,0.96 12.34,0.97 12.37,0.98 12.39,0.98 Z M 10.32,0.69 C 11.75,0.90 13.00,2.39 13.79,4.59 12.65,4.84 11.49,4.98 10.32,5.00 10.32,5.00 10.32,0.69 10.32,0.69 Z M 10.32,5.66 C 11.56,5.65 12.79,5.50 14.00,5.23 14.42,6.67 14.64,8.17 14.66,9.68 14.66,9.68 10.32,9.68 10.32,9.68 10.32,9.68 10.32,5.66 10.32,5.66 Z M 10.32,10.35 C 10.32,10.35 14.66,10.35 14.66,10.35 14.64,11.85 14.42,13.35 14.00,14.80 14.00,14.80 14.00,14.80 14.00,14.80 12.79,14.52 11.56,14.38 10.32,14.36 10.32,14.36 10.32,10.35 10.32,10.35 Z M 10.32,19.33 C 10.32,19.33 10.32,15.03 10.32,15.03 11.49,15.04 12.65,15.18 13.79,15.44 13.00,17.64 11.75,19.13 10.32,19.33 Z M 16.70,16.51 C 16.65,16.56 16.60,16.62 16.54,16.67 16.48,16.73 16.42,16.79 16.35,16.85 16.30,16.90 16.24,16.95 16.18,17.00 16.12,17.06 16.06,17.12 15.99,17.17 15.93,17.22 15.87,17.27 15.81,17.32 15.75,17.37 15.68,17.42 15.61,17.47 15.55,17.52 15.49,17.56 15.43,17.61 15.36,17.66 15.29,17.71 15.22,17.75 15.15,17.80 15.09,17.84 15.03,17.88 14.95,17.92 14.88,17.97 14.81,18.01 14.74,18.05 14.68,18.09 14.61,18.13 14.54,18.17 14.47,18.21 14.39,18.25 14.32,18.29 14.26,18.32 14.19,18.35 14.11,18.39 14.04,18.43 13.96,18.47 13.89,18.50 13.82,18.53 13.76,18.56 13.68,18.59 13.60,18.63 13.52,18.66 13.45,18.69 13.38,18.72 13.31,18.74 13.23,18.77 13.15,18.80 13.07,18.83 13.00,18.85 12.93,18.88 12.86,18.90 12.77,18.93 12.69,18.95 12.60,18.98 12.53,19.00 12.46,19.02 12.39,19.04 12.37,19.05 12.34,19.05 12.31,19.06 13.30,18.10 14.03,16.91 14.45,15.59 15.24,15.80 16.00,16.10 16.73,16.47 16.72,16.49 16.71,16.50 16.70,16.51 Z M 17.18,15.97 C 16.38,15.54 15.53,15.20 14.65,14.96 15.08,13.46 15.31,11.91 15.32,10.35 15.32,10.35 19.32,10.35 19.32,10.35 19.25,12.41 18.50,14.38 17.18,15.97 Z"/>
-				</svg>
-			</button>
-		</div>
-		<!--dropdown menü für Sprache-->
-		<div class="flex justify-end">
-			<div id="languageDropdown" class="hidden bg-blue-100 rounded-xl border border-gray-600 text-gray-800 p-3 shadow-2xl">
-				<ul>
-					<li class="flex justify-start py-1 px-1 border-b-2 border-transparent hover:border-orange-900">
-						<div class="block h-6 w-6 overflow-hidden mr-2">
-							<img class="h-full w-full object-cover" src="img/flags/united-kingdom_flag.png">
-						</div>
-						<a href="index_en.html">English</a>
-					</li>
-					<li class="flex justify-start py-1 px-1 border-b-2 border-transparent hover:border-orange-900">
-						<div class="block h-6 w-6 overflow-hidden mr-2">
-							<img class="h-full w-full object-cover" src="img/flags/germany_flag.png">
-						</div>
-						<a href="index.html">Germany</a>
-					</li>
-					<li class="flex justify-start py-1 px-1 border-b-2 border-transparent hover:border-orange-900">
-						<div class="block h-6 w-6 overflow-hidden mr-2">
-							<img class="h-full w-full object-cover" src="img/flags/poland_flag.png">
-						</div>
-						<a href="#">Poland</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div> 
+                    <!--HTML Code für größere Bildschirme-->
+                    <div class="hidden lg:flex flex-grow z-20 justify-start" id="nav-content">
+                        <ul class="list-reset lg:flex justify-start">
+                            <li id="navHoverDiv1" class="transition duration-500 mr-3 border-b-2 border-white hover:border-orange-900">
+                                <a id="navTextDiv1" class="transition duration-75 inline-block text-xl text-white font-bold lg:m-auto py-2 px-6" href="index.html">Home</a>
+                            </li>
+                            <li id="navHoverDiv2" class="transition duration-500 mr-3 border-b-2 border-transparent hover:border-orange-900">
+                                <a id="navTextDiv2" class="transition duration-75 inline-block text-xl text-white lg:m-auto py-2 px-6" href="blog.html">Blog</a>
+                            </li>
+                            <li id="navHoverDiv3" class="transition duration-500 mr-3 border-b-2 border-transparent hover:border-orange-900">
+                                <a id="navTextDiv3" class="transition duration-75 inline-block text-xl text-white lg:m-auto py-2 px-6" href="about.html">About us</a>
+                            </li>
+                        </ul>
+                    </div>
 
-	<!--Inhalt obere Welle-->
-	<div class="pt-0 md:pt-3 lg:pt-5 mb-12 md:mb-16 lg:mb-20">
-		<div class="container px-5 lg:px-16 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-			<!--Left Col-->
-			<div class="flex flex-col w-full justify-center text-center md:items-start md:text-left">
-				<h1 class="mb-5 text-6xl leading-tight">Brannnane</h1>
-				<p class="leading-normal text-3xl mb-8">Die Banane aus Brandenburg an der Havel</p>
-			</div>
-		</div>
-	</div>
+                    <!--Sprachauswahl-->
+                    <div id="navDiv2" class="pt-2 px-3 md:px-0 lg:px-0">
+                        <!--globus-->
+                        <div class="flex justify-end">
+                            <button id="languageBtn" class="block h-10 w-10 text-white hover:text-orange-900 transition duration-75" title="Sprache">
+                                <svg class="fill-current" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+                                    <title>Language</title>
+                                    <path stroke="" stroke-width="2" d="M 9.99,0.00 C 9.63,0.00 9.27,0.02 8.92,0.06 8.59,0.09 8.27,0.15 7.95,0.21 7.89,0.23 7.82,0.24 7.76,0.25 5.89,0.68 4.17,1.64 2.83,3.02 2.70,3.14 2.58,3.28 2.46,3.41 -1.17,7.58 -0.73,13.91 3.44,17.54 7.43,21.01 13.44,20.78 17.15,17.01 17.27,16.88 17.40,16.75 17.52,16.61 19.12,14.79 20.00,12.44 20.00,10.01 20.00,4.48 15.52,0.00 9.99,0.00 Z M 3.27,3.52 C 3.33,3.46 3.38,3.41 3.44,3.36 3.50,3.30 3.56,3.23 3.62,3.17 3.68,3.12 3.74,3.07 3.79,3.02 3.86,2.96 3.92,2.91 3.99,2.85 4.05,2.80 4.11,2.76 4.16,2.71 4.23,2.66 4.30,2.60 4.37,2.55 4.43,2.51 4.49,2.46 4.55,2.42 4.62,2.37 4.69,2.32 4.76,2.27 4.82,2.23 4.89,2.19 4.95,2.15 5.02,2.10 5.09,2.06 5.17,2.01 5.23,1.97 5.30,1.94 5.36,1.90 5.44,1.86 5.51,1.81 5.59,1.77 5.65,1.74 5.72,1.70 5.79,1.67 5.86,1.63 5.94,1.60 6.02,1.56 6.08,1.53 6.15,1.50 6.22,1.47 6.30,1.43 6.38,1.40 6.46,1.37 6.53,1.34 6.60,1.31 6.67,1.28 6.75,1.25 6.83,1.22 6.91,1.19 6.98,1.17 7.05,1.15 7.12,1.12 7.20,1.10 7.29,1.07 7.37,1.05 7.44,1.03 7.51,1.01 7.58,0.99 7.61,0.98 7.64,0.97 7.66,0.97 6.68,1.93 5.94,3.12 5.53,4.43 4.74,4.22 3.97,3.93 3.24,3.55 3.26,3.54 3.26,3.53 3.27,3.52 Z M 2.79,4.05 C 3.60,4.49 4.45,4.83 5.33,5.06 4.90,6.56 4.67,8.12 4.65,9.68 4.65,9.68 0.65,9.68 0.65,9.68 0.72,7.62 1.48,5.64 2.79,4.05 Z M 2.79,15.97 C 1.48,14.38 0.72,12.41 0.65,10.35 0.65,10.35 4.65,10.35 4.65,10.35 4.67,11.91 4.90,13.46 5.33,14.96 4.45,15.20 3.60,15.54 2.79,15.97 Z M 7.58,19.04 C 7.51,19.02 7.44,19.00 7.37,18.98 7.29,18.96 7.20,18.93 7.12,18.90 7.05,18.88 6.98,18.86 6.91,18.83 6.83,18.80 6.75,18.78 6.67,18.74 6.60,18.72 6.53,18.69 6.46,18.66 6.38,18.63 6.30,18.60 6.22,18.56 6.15,18.53 6.09,18.50 6.02,18.47 5.94,18.43 5.86,18.40 5.78,18.36 5.72,18.32 5.65,18.29 5.58,18.25 5.51,18.21 5.43,18.17 5.36,18.13 5.29,18.09 5.23,18.05 5.17,18.01 5.09,17.97 5.02,17.93 4.95,17.88 4.88,17.84 4.82,17.80 4.76,17.76 4.69,17.71 4.62,17.66 4.55,17.61 4.49,17.56 4.43,17.52 4.36,17.47 4.30,17.42 4.23,17.37 4.16,17.31 4.10,17.27 4.04,17.22 3.99,17.17 3.92,17.12 3.85,17.06 3.79,17.00 3.73,16.95 3.68,16.90 3.62,16.85 3.56,16.79 3.49,16.73 3.43,16.67 3.38,16.61 3.32,16.56 3.27,16.51 3.26,16.50 3.25,16.49 3.24,16.48 3.97,16.10 4.74,15.81 5.53,15.60 5.94,16.91 6.67,18.10 7.66,19.06 7.64,19.05 7.61,19.05 7.58,19.04 Z M 9.65,19.33 C 8.23,19.13 6.97,17.64 6.19,15.44 7.33,15.18 8.49,15.04 9.65,15.03 9.65,15.03 9.65,19.33 9.65,19.33 Z M 9.65,14.36 C 8.42,14.38 7.18,14.52 5.98,14.80 5.56,13.35 5.34,11.85 5.32,10.35 5.32,10.35 9.65,10.35 9.65,10.35 9.65,10.35 9.65,14.36 9.65,14.36 Z M 9.65,9.68 C 9.65,9.68 5.32,9.68 5.32,9.68 5.34,8.17 5.56,6.67 5.98,5.23 7.18,5.50 8.42,5.65 9.65,5.66 9.65,5.66 9.65,9.68 9.65,9.68 Z M 9.65,5.00 C 8.49,4.98 7.33,4.84 6.19,4.59 6.97,2.39 8.23,0.90 9.65,0.69 9.65,0.69 9.65,5.00 9.65,5.00 Z M 17.18,4.05 C 18.50,5.64 19.25,7.62 19.32,9.68 19.32,9.68 15.32,9.68 15.32,9.68 15.31,8.12 15.08,6.56 14.65,5.06 15.53,4.83 16.38,4.49 17.18,4.05 Z M 12.39,0.98 C 12.46,1.00 12.53,1.02 12.60,1.04 12.69,1.07 12.77,1.09 12.86,1.12 12.93,1.14 13.00,1.17 13.06,1.19 13.15,1.22 13.23,1.25 13.31,1.28 13.38,1.31 13.45,1.33 13.52,1.36 13.60,1.40 13.68,1.43 13.76,1.46 13.82,1.49 13.89,1.52 13.96,1.56 14.04,1.59 14.11,1.63 14.19,1.67 14.26,1.70 14.33,1.74 14.39,1.77 14.47,1.81 14.54,1.85 14.62,1.90 14.68,1.93 14.75,1.97 14.81,2.01 14.89,2.05 14.96,2.10 15.03,2.15 15.09,2.19 15.16,2.23 15.22,2.27 15.29,2.32 15.36,2.37 15.43,2.42 15.49,2.46 15.55,2.50 15.61,2.55 15.68,2.60 15.75,2.66 15.82,2.71 15.87,2.76 15.93,2.80 15.99,2.85 16.06,2.91 16.12,2.97 16.19,3.02 16.24,3.07 16.30,3.12 16.36,3.17 16.42,3.23 16.48,3.30 16.54,3.36 16.60,3.41 16.65,3.46 16.71,3.52 16.72,3.53 16.72,3.54 16.73,3.55 16.01,3.92 15.24,4.22 14.45,4.43 14.03,3.11 13.30,1.92 12.31,0.96 12.34,0.97 12.37,0.98 12.39,0.98 Z M 10.32,0.69 C 11.75,0.90 13.00,2.39 13.79,4.59 12.65,4.84 11.49,4.98 10.32,5.00 10.32,5.00 10.32,0.69 10.32,0.69 Z M 10.32,5.66 C 11.56,5.65 12.79,5.50 14.00,5.23 14.42,6.67 14.64,8.17 14.66,9.68 14.66,9.68 10.32,9.68 10.32,9.68 10.32,9.68 10.32,5.66 10.32,5.66 Z M 10.32,10.35 C 10.32,10.35 14.66,10.35 14.66,10.35 14.64,11.85 14.42,13.35 14.00,14.80 14.00,14.80 14.00,14.80 14.00,14.80 12.79,14.52 11.56,14.38 10.32,14.36 10.32,14.36 10.32,10.35 10.32,10.35 Z M 10.32,19.33 C 10.32,19.33 10.32,15.03 10.32,15.03 11.49,15.04 12.65,15.18 13.79,15.44 13.00,17.64 11.75,19.13 10.32,19.33 Z M 16.70,16.51 C 16.65,16.56 16.60,16.62 16.54,16.67 16.48,16.73 16.42,16.79 16.35,16.85 16.30,16.90 16.24,16.95 16.18,17.00 16.12,17.06 16.06,17.12 15.99,17.17 15.93,17.22 15.87,17.27 15.81,17.32 15.75,17.37 15.68,17.42 15.61,17.47 15.55,17.52 15.49,17.56 15.43,17.61 15.36,17.66 15.29,17.71 15.22,17.75 15.15,17.80 15.09,17.84 15.03,17.88 14.95,17.92 14.88,17.97 14.81,18.01 14.74,18.05 14.68,18.09 14.61,18.13 14.54,18.17 14.47,18.21 14.39,18.25 14.32,18.29 14.26,18.32 14.19,18.35 14.11,18.39 14.04,18.43 13.96,18.47 13.89,18.50 13.82,18.53 13.76,18.56 13.68,18.59 13.60,18.63 13.52,18.66 13.45,18.69 13.38,18.72 13.31,18.74 13.23,18.77 13.15,18.80 13.07,18.83 13.00,18.85 12.93,18.88 12.86,18.90 12.77,18.93 12.69,18.95 12.60,18.98 12.53,19.00 12.46,19.02 12.39,19.04 12.37,19.05 12.34,19.05 12.31,19.06 13.30,18.10 14.03,16.91 14.45,15.59 15.24,15.80 16.00,16.10 16.73,16.47 16.72,16.49 16.71,16.50 16.70,16.51 Z M 17.18,15.97 C 16.38,15.54 15.53,15.20 14.65,14.96 15.08,13.46 15.31,11.91 15.32,10.35 15.32,10.35 19.32,10.35 19.32,10.35 19.25,12.41 18.50,14.38 17.18,15.97 Z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <!--dropdown menü für Sprache-->
+                        <div class="flex justify-end">
+                            <div id="languageDropdown" class="z-10 absolute hidden bg-blue-100 rounded-xl border border-gray-600 text-gray-800 p-3 shadow-2xl">
+                                <ul class=""> 
+                                    <li class="flex justify-start py-1 px-1 border-b-2 border-transparent hover:border-orange-900 transition duration-500">
+                                        <div class="block h-6 w-6 overflow-hidden mr-2">
+                                            <img class="h-full w-full object-cover" src="img/flags/united-kingdom_flag.png">
+                                        </div>
+                                        <a href="index_en.html">English</a>
+                                    </li>
+                                    <li class="flex justify-start py-1 px-1 border-b-2 border-transparent hover:border-orange-900 transition duration-500">
+                                        <div class="block h-6 w-6 overflow-hidden mr-2">
+                                            <img class="h-full w-full object-cover" src="img/flags/germany_flag.png">
+                                        </div>
+                                        <a href="index.html">German</a>
+                                    </li>
+                                    <li class="flex justify-start py-1 px-1 border-b-2 border-transparent hover:border-orange-900 transition duration-500">
+                                        <div class="block h-6 w-6 overflow-hidden mr-2">
+                                            <img class="h-full w-full object-cover" src="img/flags/poland_flag.png">
+                                        </div>
+                                        <a href="#">Polish</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
+                </div>
 
-<!--obere Welle-->
-<div class="relative -mt-12 lg:-mt-24">
-	<svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-		<g transform="translate(-2.000000, 44.000000)" fill="#FFFFFF" fill-rule="nonzero">
-		<!--Wellenform definieren-->
-			<path d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496" opacity="0.100000001"></path>
-			<path d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z" opacity="0.100000001"></path>
-			<path d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z" id="Path-4" opacity="0.200000003"></path>
-		</g>
-			<g transform="translate(-4.000000, 76.000000)" fill="#FFFFFF" fill-rule="nonzero">
-				<path d="M0.457,34.035 C57.086,53.198 98.208,65.809 123.822,71.865 C181.454,85.495 234.295,90.29 272.033,93.459 C311.355,96.759 396.635,95.801 461.025,91.663 C486.76,90.01 518.727,86.372 556.926,80.752 C595.747,74.596 622.372,70.008 636.799,66.991 C663.913,61.324 712.501,49.503 727.605,46.128 C780.47,34.317 818.839,22.532 856.324,15.904 C922.689,4.169 955.676,2.522 1011.185,0.432 C1060.705,1.477 1097.39,3.129 1121.236,5.387 C1161.703,9.219 1208.621,17.821 1235.4,22.304 C1285.855,30.748 1354.351,47.432 1440.886,72.354 L1441.191,104.352 L1.121,104.031 L0.457,34.035 Z"></path>
-			</g>
-	</g>
-	</svg>
-</div>
+                <div class="">
+                    <hr class="border-b border-gray-800 opacity-50 shadow-2xl my-0 py-0"/>
+                </div>
+                
+            </nav>
+        </header>
 
-
-<!--Contenstart-->
-<section class="bg-white py-10">
-	<!--Überschrift-->
-	<div class="container py-12 mx-auto">
-		<h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">Everything Brannnane?</h1>
-		<div class="w-full mb-4">	
-			<div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
-		</div>
-		
-		<!--Erster Text-->
-		<div class="mt-10 p-6 md:p-0 text-justify">
-			<h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">Hakuna Brannnana?</h3>
-			<p class="text-gray-600 mb-8">Brandenburg an der Havel - Province of Brannnanen in the heart of Germany. Every year the city attracts millions of visitors and tourists. They all pursue a common goal - to see a real Brannnane, and there are plenty of them in the province. Since 1964 this special kind of banana has been growing everywhere from the soil of Brandenburg. Until now, Brandenburg has been considered as a geographically unique growth area. Nowhere else in the world are there such perfect conditions for growing the brandnana. It is therefore no wonder that the local citizens see their Brannnane as a gift from God. You will find everything you need to know about the brannnans from Brandenburg an der Havel on this website. 
-			</p>		
-		</div>
-
-		<!--Zweiter Text-->
-		<div class="mt-10 p-6 text-justify">
-
-		</div>
-
-		
-		
-		<div class="flex flex-wrap flex-col-reverse sm:flex-row">	
-			<div class="w-full sm:w-1/2 p-6 mt-6">
-		
-			</div>
-			<div class="w-full sm:w-1/2 sm:p-6 md:p-0 mt-6">
-				<div class="mt-10 p-6 md:p-0 text-justify">
-					<h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">Background</h3>
-					<p class="text-gray-600 mb-8">We are students form the University of Applied Science in Brandenburg. This is a project of the modul "marketing" as part of the degree courses Business & Informations Systems Engineering. All information is ficional and is only used for search engine optimisation. The Brannnnane doesn't exist, yet.<br /><br />
-					Images from:</p>
-				</div>
-			</div>
-
-		</div>
-	</div>
-</section>
-	
-		
-
-
-<!--"untere Welle-->
-<!-- Change the colour #f8fafc to match the previous section colour -->
-<svg class="wave-top" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-		<g transform="translate(-1.000000, -14.000000)" fill-rule="nonzero">
-			<g class="wave" fill="#FFFFFF">
-				<path d="M1440,84 C1383.555,64.3 1342.555,51.3 1317,45 C1259.5,30.824 1206.707,25.526 1169,22 C1129.711,18.326 1044.426,18.475 980,22 C954.25,23.409 922.25,26.742 884,32 C845.122,37.787 818.455,42.121 804,45 C776.833,50.41 728.136,61.77 713,65 C660.023,76.309 621.544,87.729 584,94 C517.525,105.104 484.525,106.438 429,108 C379.49,106.484 342.823,104.484 319,102 C278.571,97.783 231.737,88.736 205,84 C154.629,75.076 86.296,57.743 0,32 L0,0 L1440,0 L1440,84 Z"></path>
-			</g>
-			<g transform="translate(1.000000, 15.000000)" fill="#FFFFFF">
-				<g transform="translate(719.500000, 68.500000) rotate(-180.000000) translate(-719.500000, -68.500000) ">
-					<path d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496" opacity="0.100000001"></path>
-					<path d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z" opacity="0.100000001"></path>
-					<path d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z" opacity="0.200000003"></path>
-				</g>
-			</g>
-		</g>
-	</g>
-</svg>
-
-
-
-<!--Inhalt untere Welle-->
-<section class="container mx-auto text-center py-6 mb-8">
-	<h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-white">Social Media</h1>
-	<div class="w-full mb-4">	
-		<div class="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
-	</div>
-	<h3 class="my-4 text-3xl leading-tight">Feel free to join us!</h3>
-
-	<!--Social Media Icons-->
-	<div class="h-auto my-16 mx-5 sm:mx-16 md:mx-20 lg:mx-32 xl:mx-40 flex items-center justify-between">
-		<a class="link" href="#" data-tippy-content="@facebook_handle"><svg class="h-10 px-2 fill-current text-white hover:text-blue-800" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.408.593 24 1.324 24h11.494v-9.294H9.689v-3.621h3.129V8.41c0-3.099 1.894-4.785 4.659-4.785 1.325 0 2.464.097 2.796.141v3.24h-1.921c-1.5 0-1.792.721-1.792 1.771v2.311h3.584l-.465 3.63H16.56V24h6.115c.733 0 1.325-.592 1.325-1.324V1.324C24 .593 23.408 0 22.676 0"/></svg></a>
-		<a class="link" href="#" data-tippy-content="@twitter_handle"><svg class="h-10 px-2 fill-current text-white hover:text-blue-500" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg></a>
-		<a class="link" href="https://www.instagram.com/brannnane/" data-tippy-content="@brannnane"><svg class="h-10 px-2 fill-current text-white hover:text-pink-700" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
-		<a class="link" href="https://www.youtube.com/channel/UCnLfqsafGzWKlY9lcvIA32w" data-tippy-content="Brannnane - Banane aus Brandenburg"><svg class="h-10 px-2 fill-current text-white hover:text-red-700" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>YouTube</title><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
-	</div>		
-</section>
-
-
-<!--Footer-->
-<footer class="bg-white">
-	<div class="container mx-auto px-8">
-
-        <div class="w-full flex flex-col md:flex-row pt-6">	
-		
-            <div class="flex-1">
-                <p class="uppercase text-gray-500 md:mb-6">Links</p>
-                <ul class="list-reset mb-6">
-                    <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                        <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-700">FAQ</a>
-                    </li>
-                    <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                        <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-700">Help</a>
-                    </li>
-                    <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                        <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-700">Support</a>
-                    </li>
-                </ul>
+        <!--Inhalt obere Welle-->
+        <div class="pt-32 sm:pt-32 md:pt-32 lg:pt-40 mb-16 sm:mb-20 md:mb-20 lg:mb-24">
+            <div class="container px-5 lg:px-16 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+                <!--Left Col-->
+                <div class="flex flex-col w-full justify-center text-center md:items-start md:text-left">
+                    <h1 class="mb-5 text-6xl leading-tight">Brannnane</h1>
+                    <p class="leading-normal text-3xl mb-8">The banana from Brandenburg an der Havel</p>
+                </div>
             </div>
-            <div class="flex-1">
-                <p class="uppercase text-gray-500 md:mb-6">Legal</p>
-                <ul class="list-reset mb-6">
-                    <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                        <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-700">Terms</a>
-                    </li>
-                    <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                        <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-700">Privacy</a>
-                    </li>
-                </ul>
+        </div>
+
+        <!--obere Welle-->
+        <div class="relative -mt-12 lg:-mt-24">
+            <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g transform="translate(-2.000000, 44.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                        <!--Wellenform definieren-->
+                        <path
+                            d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496"
+                            opacity="0.100000001"
+                        ></path>
+                        <path
+                            d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z"
+                            opacity="0.100000001"
+                        ></path>
+                        <path d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z" id="Path-4" opacity="0.200000003"></path>
+                    </g>
+                    <g transform="translate(-4.000000, 76.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                        <path
+                            d="M0.457,34.035 C57.086,53.198 98.208,65.809 123.822,71.865 C181.454,85.495 234.295,90.29 272.033,93.459 C311.355,96.759 396.635,95.801 461.025,91.663 C486.76,90.01 518.727,86.372 556.926,80.752 C595.747,74.596 622.372,70.008 636.799,66.991 C663.913,61.324 712.501,49.503 727.605,46.128 C780.47,34.317 818.839,22.532 856.324,15.904 C922.689,4.169 955.676,2.522 1011.185,0.432 C1060.705,1.477 1097.39,3.129 1121.236,5.387 C1161.703,9.219 1208.621,17.821 1235.4,22.304 C1285.855,30.748 1354.351,47.432 1440.886,72.354 L1441.191,104.352 L1.121,104.031 L0.457,34.035 Z"
+                        ></path>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+        <!--Contenstart-->
+        <section class="bg-white py-10">
+            <!--Überschrift-->
+            <div class="container py-12 mx-auto">
+                <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">Hakuna Brannnana?</h1>
+                <div class="w-full mb-4">
+                    <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+                </div>
+
+                <!--Erster Text-->
+                <div class="mt-10 p-6 md:p-0 text-justify">
+                    <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">Everything Brannnane?</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Brandenburg an der Havel - province of the Brannnans in the heart of Germany. Every year the city attracts millions of visitors and tourists. They all pursue a common goal - to see a real Brannnane, and there are many of them in the province. and there are plenty of them in the province. Since 1964, this special type of banana has been growing everywhere from the soil of Brandenburg. Up to now, Brandenburg has been considered a geographically unique growth area. Nowhere in the world are there such perfect conditions for the growth of the Brannnane. No wonder that the local citizens see their Brannnane like a gift from God. On this website you will learn everything you need to know about the Brannnane from Brandenburg an der Havel.
+                    </p>
+                </div>
+
+                <!--Zweiter Text-->
+                <div class="mt-16 p-6 md:p-0 text-justify">
+                    <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">The unique taste of Brannnane</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        The taste of a brandy tea can hardly be put into words. However, some have tried - we have recorded the personal taste experiences for you here.
+                    </p>
+                </div>
+
+                <!--Test
+                <div id="intro" class="slider glide glide--ltr glide--carousel glide--swipeable border-t-2 border-b-2 border-gray-400 text-gray-600 my-5 p-3">
+                    <div class="slider__track glide__track" data-glide-el="track">
+						<ul id="" class="slider__slides glide__slides" style="transition: transform 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; width: 3432.5px; transform: translate3d(-478.125px, 0px, 0px);">
+							<li class="slider__frame glide__slide rounded-3xl border-2 border-gray-300 bg-gray-100 p-5" style="width: 181.25px">
+                                <p class="text-xl font-bold">
+                                    Username
+                                </p>
+                                <p class="">
+                                    Date
+                                </p>
+                                <p class="mt-1">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </p>
+                                <p class="break-words mt-2 h-32 sm:h-48 md:h-40 lg:h-40 text-justify">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea tnn
+                                </p>
+                            </li>
+                            
+                        </ul>
+                            
+                    </div>
+                </div>
+                -->
+
+                <!-- Reviews-->
+                <div id="intro" class="slider glide glide--ltr glide--carousel glide--swipeable border-t-2 border-b-2 border-gray-400 text-gray-600 my-5 p-3">
+                    <div class="slider__track glide__track" data-glide-el="track">
+						<ul id="reviews" class="slider__slides glide__slides" style="transition: transform 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; width: 3432.5px; transform: translate3d(-478.125px, 0px, 0px);">
+							<!--
+                            <li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">0</li>
+                            <li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">1</li>
+                            <li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">2</li>
+                            <li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">3</li>
+                            <li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">4</li>
+                            <li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">5</li>
+                            <li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">6</li>
+							<li class="slider__frame glide__slide glide__slide--clone" style="width: 181.25px; margin-left: 5px; margin-right: 5px;">7</li>
+							-->
+                        </ul>
+                    </div>
+
+                    <div data-glide-el="controls">
+                        <button class="fill-current slider__arrow slider__arrow--prev glide__arrow glide__arrow--left text-white" data-glide-dir="<">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                                <path d="M0 12l10.975 11 2.848-2.828-6.176-6.176H24v-3.992H7.646l6.176-6.176L10.975 1 0 12z"></path>
+                            </svg>
+                        </button>
+
+                        <button class="fill-current slider__arrow slider__arrow--next glide__arrow glide__arrow--right text-white" data-glide-dir=">">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                                <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div id="bullets" class="slider__bullets glide__bullets" data-glide-el="controls[nav]">
+
+                        <!--
+                        <button class="slider__bullet glide__bullet glide__bullet--active" data-glide-dir="=0"></button>
+
+                        <button class="slider__bullet glide__bullet" data-glide-dir="=1"></button>
+
+                        <button class="slider__bullet glide__bullet" data-glide-dir="=2"></button>
+
+                        <button class="slider__bullet glide__bullet" data-glide-dir="=3"></button>
+
+                        <button class="slider__bullet glide__bullet" data-glide-dir="=4"></button>
+
+                        <button class="slider__bullet glide__bullet" data-glide-dir="=5"></button>
+
+                        <button class="slider__bullet glide__bullet" data-glide-dir="=6"></button>
+
+                        <button class="slider__bullet glide__bullet" data-glide-dir="=7"></button>
+
+                        <button class="slider__bullet glide__bullet" data-glide-dir="=8"></button>
+
+                        <button class="slider__bullet glide__bullet" data-glide-dir="=9"></button>
+                        -->
+
+                    </div>
+                </div>
+
+
+                <!--Input review-->
+                
+                <div class="my-6 p-6 md:p-0 text-justify">
+                    <p class="text-gray-600 leading-relaxed">
+                        Have you already had the pleasure of enjoying a Brandenburg brannnane in person? If so, feel free to share your experience with us :)
+                    </p>
+                </div>
+
+                <div class="rounded-xl border border-gray-500 backgroundReviews text-gray-600 shadow-lg m-2 sm:mx-10 lg:mx-64 p-6">
+                    <form method="POST">
+                        <label class="font-bold" for="username">Username:</label>
+                        <input class="border-2 border-transparent border-blue-300 rounded-md shadow-lg ml-2" type="text" id="username" name="username" maxlength="20" placeholder="max. 20 Zeichen"><br>
+
+                        <div class="flex justify-items-start mt-2">
+                            <div class="font-bold">
+                                <p>
+                                    Rating:
+                                </p>
+                            </div>
+                            <div class="star-widget mt-1 ml-2">
+                                <input type="radio" name="rate" id="rate-5" value="5">
+                                <label for="rate-5" class="fa fa-star mr-1"></label>
+                                <input type="radio" name="rate" id="rate-4" value="4">
+                                <label for="rate-4" class="fa fa-star mr-1"></label>
+                                <input type="radio" name="rate" id="rate-3" value="3">
+                                <label for="rate-3" class="fa fa-star mr-1"></label>
+                                <input type="radio" name="rate" id="rate-2" value="2">
+                                <label for="rate-2" class="fa fa-star mr-1"></label>
+                                <input type="radio" name="rate" id="rate-1" value="1" checked>
+                                <label for="rate-1" class="fa fa-star mr-1"></label>
+                            </div>
+                        </div>
+                        
+
+                        <label class="font-bold" for="description">Description:</label><br>
+                        <textarea class="border-2 border-transparent border-blue-300 rounded-md shadow-lg mt-2 w-full" type="textarea" id="description" rows="4" name="description" maxlength="250" placeholder="max. 250 Zeichen"></textarea><br>
+                        
+                        <button class="rounded-sm shadow-lg bg-orange-700 hover:bg-orange-600 text-white text-center mt-4 py-1 px-2" id="submit">Send</button>
+                            
+                    </form> 
+                </div>
+
             </div>
-            <div class="flex-1">
-                <p class="uppercase text-gray-500 md:mb-6">Social</p>
-                <ul class="list-reset mb-6">
-                    <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                        <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-700">Facebook</a>
-                    </li>
-                    <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                        <a href="https://twitter.com/brannnane" class="no-underline hover:underline text-gray-800 hover:text-orange-700">Twitter</a>
-					</li>
-					<li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                        <a href="https://www.instagram.com/brannnane/" class="no-underline hover:underline text-gray-800 hover:text-orange-700">Instagram</a>
-					</li>
-					<li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                        <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-700">TikTok</a>
-                    </li>
-					<li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                        <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-700">Youtube</a>
-                    </li>
-                </ul>
+        </section>
+
+        <!--"untere Welle-->
+        <!-- Change the colour #f8fafc to match the previous section colour -->
+        <svg class="wave-top" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g transform="translate(-1.000000, -14.000000)" fill-rule="nonzero">
+                    <g class="wave" fill="#FFFFFF">
+                        <path
+                            d="M1440,84 C1383.555,64.3 1342.555,51.3 1317,45 C1259.5,30.824 1206.707,25.526 1169,22 C1129.711,18.326 1044.426,18.475 980,22 C954.25,23.409 922.25,26.742 884,32 C845.122,37.787 818.455,42.121 804,45 C776.833,50.41 728.136,61.77 713,65 C660.023,76.309 621.544,87.729 584,94 C517.525,105.104 484.525,106.438 429,108 C379.49,106.484 342.823,104.484 319,102 C278.571,97.783 231.737,88.736 205,84 C154.629,75.076 86.296,57.743 0,32 L0,0 L1440,0 L1440,84 Z"
+                        ></path>
+                    </g>
+                    <g transform="translate(1.000000, 15.000000)" fill="#FFFFFF">
+                        <g transform="translate(719.500000, 68.500000) rotate(-180.000000) translate(-719.500000, -68.500000) ">
+                            <path
+                                d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496"
+                                opacity="0.100000001"
+                            ></path>
+                            <path
+                                d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z"
+                                opacity="0.100000001"
+                            ></path>
+                            <path d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z" opacity="0.200000003"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </svg>
+
+        <!--Inhalt untere Welle-->
+        <section class="container mx-auto text-center py-6 mb-8">
+            <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-white">Social Media</h1>
+            <div class="w-full mb-4">
+                <div class="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
             </div>
-            <div class="flex-1">
-                <p class="uppercase text-gray-500 md:mb-6">Company</p>
-                <ul class="list-reset mb-6">
-                    <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                        <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-700">Official Blog</a>
-                    </li>
-                    <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                        <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-700">About Us</a>
-                    </li>
-                </ul>
+            <h3 class="my-4 text-3xl leading-tight">Feel free to join us!</h3>
+
+            <!--Social Media Icons-->
+            <div class="h-auto my-16 mx-5 sm:mx-16 md:mx-20 lg:mx-32 xl:mx-40 flex items-center justify-between">
+                <a class="link" href="#" data-tippy-content="@facebook_handle">
+                    <svg class="h-10 px-2 fill-current text-white hover:text-blue-700" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>Facebook</title>
+                        <path
+                            d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.408.593 24 1.324 24h11.494v-9.294H9.689v-3.621h3.129V8.41c0-3.099 1.894-4.785 4.659-4.785 1.325 0 2.464.097 2.796.141v3.24h-1.921c-1.5 0-1.792.721-1.792 1.771v2.311h3.584l-.465 3.63H16.56V24h6.115c.733 0 1.325-.592 1.325-1.324V1.324C24 .593 23.408 0 22.676 0"
+                        />
+                    </svg>
+                </a>
+                <a class="link" href="https://twitter.com/brannnane" data-tippy-content="@brannnane">
+                    <svg class="h-10 px-2 fill-current text-white hover:text-blue-500" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>Twitter</title>
+                        <path
+                            d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"
+                        />
+                    </svg>
+                </a>
+                <a class="link" href="https://www.instagram.com/brannnane/" data-tippy-content="@brannnane">
+                    <svg class="h-10 px-2 fill-current text-white hover:text-pink-700" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>Instagram</title>
+                        <path
+                            d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"
+                        />
+                    </svg>
+                </a>
+                <a class="link" href="https://www.youtube.com/channel/UCnLfqsafGzWKlY9lcvIA32w" data-tippy-content="Brannnane - Banane aus Brandenburg">
+                    <svg class="h-10 px-2 fill-current text-white hover:text-red-700" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>YouTube</title>
+                        <path
+                            d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"
+                        />
+                    </svg>
+                </a>
             </div>
-		</div>
-	</div>
-	
-	<div class="pb-6 bg-white text-gray-500 text-center">
-		<p>© All rights reserved to Brannnane</p>
-	</div>
-</footer>
+        </section>
 
+        <!--Footer-->
+        <footer class="bg-white">
+            <div class="container mx-auto px-8">
+                <div class="w-full flex flex-col md:flex-row pt-6">
+                    <div class="flex-1">
+                        <p class="uppercase text-gray-500 md:mb-6">Links</p>
+                        <ul class="list-reset mb-6">
+                            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-700">FAQ</a>
+                            </li>
+                            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-700">Help</a>
+                            </li>
+                            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-700">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex-1">
+                        <p class="uppercase text-gray-500 md:mb-6">Legal</p>
+                        <ul class="list-reset mb-6">
+                            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-700">Terms</a>
+                            </li>
+                            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-700">Privacy</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex-1">
+                        <p class="uppercase text-gray-500 md:mb-6">Social</p>
+                        <ul class="list-reset mb-6">
+                            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-700">Facebook</a>
+                            </li>
+                            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                                <a href="https://twitter.com/brannnane" class="no-underline hover:underline text-gray-800 hover:text-orange-700">Twitter</a>
+                            </li>
+                            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                                <a href="https://www.instagram.com/brannnane/" class="no-underline hover:underline text-gray-800 hover:text-orange-700">Instagram</a>
+                            </li>
+                            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-700">TikTok</a>
+                            </li>
+                            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-700">Youtube</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex-1">
+                        <p class="uppercase text-gray-500 md:mb-6">Company</p>
+                        <ul class="list-reset mb-6">
+                            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-700">Official Blog</a>
+                            </li>
+                            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-orange-700">About Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-<!--Scripts-->
-<script>
-	/*Toggle dropdown list navigation*/
-	/*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
-	
-	var navMenuDiv = document.getElementById("nav-content");
-	var navMenu = document.getElementById("nav-toggle");
-	
-	document.onclick = check;
-	function check(e){
-	  var target = (e && e.target) || (event && event.srcElement);
-	  
-	  //Nav Menu
-	  if (!checkParent(target, navMenuDiv)) {
-		// click NOT on the menu
-		if (checkParent(target, navMenu)) {
-		  // click on the link
-		  if (navMenuDiv.classList.contains("hidden")) {
-			navMenuDiv.classList.remove("hidden");
-		  } else {navMenuDiv.classList.add("hidden");}
-		} else {
-		  // click both outside link and outside menu, hide menu
-		  navMenuDiv.classList.add("hidden");
-		}
-	  }
-	  
-	}
-	function checkParent(t, elm) {
-	  while(t.parentNode) {
-		if( t == elm ) {return true;}
-		t = t.parentNode;
-	  }
-	  return false;
-	}
-</script>
+            <div class="pb-6 bg-white text-gray-500 text-center">
+                <p>© All rights reserved to Brannnane</p>
+            </div>
+        </footer>
 
-	<!--social media icons drop-->
-<script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
-<script src="https://unpkg.com/tippy.js@4"></script>
-<script>
-	//Init tooltips
-	tippy('.link',{
-	  placement: 'bottom'
-	})	
-</script>
+        <script>
+            //Burger-Menü tooglen
+            var navDivFlex = document.getElementById("navDivFlex");
+            var navMenuDiv = document.getElementById("nav-content");
+            var burgerBtn = document.getElementById("burgerButton");
+            var languageBtn = document.getElementById("languageBtn");
+            var navTextDiv1 = document.getElementById('navTextDiv1');
+            var navTextDiv2 = document.getElementById('navTextDiv2');
+            var navTextDiv3 = document.getElementById('navTextDiv3');
+            var navHoverDiv1 = document.getElementById('navHoverDiv1');
+            var navHoverDiv2 = document.getElementById('navHoverDiv2');
+            var navHoverDiv3 = document.getElementById('navHoverDiv3');
+            
 
-</body>
+            document.onclick = check;
+            function check(e) {
+                var target = (e && e.target) || (event && event.srcElement);
 
+                //Nav Menu
+                if (!checkParent(target, navMenuDiv)) {
+                    // click NOT on the menu
+                    if (checkParent(target, burgerBtn)) {
+                        if (navMenuDiv.classList.contains("hidden")) {
+                            header.classList.remove("gradient");
+                            header.classList.add("bg-blue-100");
+
+                            navDivFlex.classList.remove("flex");
+                            navMenuDiv.classList.remove("hidden");
+
+                            burgerBtn.classList.remove("text-white");
+                            burgerBtn.classList.add("text-gray-800", "mt-3");
+
+                            languageBtn.classList.remove("text-white");
+                            languageBtn.classList.add("text-gray-800");
+
+                            navTextDiv1.classList.remove("text-white");
+                            navTextDiv1.classList.add("text-gray-800", "hover:text-orange-900");
+                            navTextDiv2.classList.remove("text-white");
+                            navTextDiv2.classList.add("text-gray-800", "hover:text-orange-900");
+                            navTextDiv3.classList.remove("text-white");
+                            navTextDiv3.classList.add("text-gray-800", "hover:text-orange-900");
+
+                            navHoverDiv1.classList.remove("border-b-2");
+                            navHoverDiv2.classList.remove("border-b-2");
+                            navHoverDiv3.classList.remove("border-b-2");
+                        } else {
+                            navDivFlex.classList.add("flex")
+                            navMenuDiv.classList.add("hidden");
+                            burgerBtn.classList.remove("mt-3")
+
+                            navTextDiv1.classList.remove("hover:text-orange-900");
+                            navTextDiv2.classList.remove("hover:text-orange-900");
+                            navTextDiv3.classList.remove("hover:text-orange-900");
+
+                            navHoverDiv1.classList.add("border-b-2");
+                            navHoverDiv2.classList.add("border-b-2");
+                            navHoverDiv3.classList.add("border-b-2");
+                        }
+                         
+                    } else {
+                        // click both outside link and outside menu, hide menu
+                        navDivFlex.classList.add("flex")
+                        navMenuDiv.classList.add("hidden");
+                        burgerBtn.classList.remove("mt-3")
+
+                        navTextDiv1.classList.remove("hover:text-orange-900");
+                        navTextDiv2.classList.remove("hover:text-orange-900");
+                        navTextDiv3.classList.remove("hover:text-orange-900");
+
+                        navHoverDiv1.classList.add("border-b-2");
+                        navHoverDiv2.classList.add("border-b-2");
+                        navHoverDiv3.classList.add("border-b-2");
+                    }
+                }
+            }
+            function checkParent(t, elm) {
+                while (t.parentNode) {
+                    if (t == elm) {
+                        return true;
+                    }
+                    t = t.parentNode;
+                }
+                return false;
+            }
+        </script>
+
+        <!--social media icons drop-->
+        <script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
+        <script src="https://unpkg.com/tippy.js@4"></script>
+        <script>
+        //Init tooltips
+        tippy(".link", {
+            placement: "bottom",
+        });
+        </script>
+    </body>
 </html>
